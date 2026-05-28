@@ -1,0 +1,2470 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>فلسفة الباكالوريا — تقني رياضي + تسيير واقتصاد</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&amp;family=Tajawal:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --red: #E8534A;
+  --red-dark: #c73d35;
+  --red-light: #fdf0ef;
+  --blue: #3B82F6;
+  --blue-light: #EFF6FF;
+  --green: #22C55E;
+  --green-light: #F0FDF4;
+  --orange: #F97316;
+  --orange-light: #FFF7ED;
+  --yellow: #EAB308;
+  --yellow-light: #FEFCE8;
+  --purple: #8B5CF6;
+  --purple-light: #F5F3FF;
+  --dark: #1a1a2e;
+  --dark2: #2d2d44;
+  --gray: #6B7280;
+  --gray-light: #F3F4F6;
+  --white: #FFFFFF;
+  --border: #E5E7EB;
+  --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.15);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: #F8F7F5;
+  color: var(--dark);
+  min-height: 100vh;
+  direction: rtl;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: var(--dark);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+
+.header-top {
+  background: var(--red);
+  padding: 8px 20px;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+.nav-btn:hover { color: white; }
+.nav-btn.active { color: var(--red); border-bottom-color: var(--red); }
+
+/* ===== PAGES ===== */
+.page { display: none; padding: 24px 16px; max-width: 900px; margin: 0 auto; }
+.page.active { display: block; }
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 200px; height: 200px;
+  background: var(--red);
+  opacity: 0.1;
+  border-radius: 50%;
+}
+
+.hero h1 {
+  font-size: 32px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.hero h1 span { color: var(--red); }
+.hero p { color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 20px; }
+
+.badge {
+  display: inline-block;
+  background: var(--red);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 4px;
+}
+
+/* ===== CARDS GRID ===== */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+
+@media(max-width:600px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .nav-btn { font-size: 12px; padding: 14px 10px; }
+  .hero h1 { font-size: 22px; }
+}
+
+/* ===== SECTION TITLE ===== */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.section-title h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.section-title .line {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+}
+
+.tag {
+  background: var(--red);
+  color: white;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.tag.blue { background: var(--blue); }
+.tag.green { background: var(--green); }
+.tag.orange { background: var(--orange); }
+.tag.purple { background: var(--purple); }
+
+/* ===== CARD ===== */
+.card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.card-sm {
+  background: white;
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border: 1px solid var(--border);
+}
+
+/* ===== ACCORDION ===== */
+.accordion { margin-bottom: 12px; }
+
+.accordion-header {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.accordion-header:hover { border-color: var(--red); background: var(--red-light); }
+.accordion-header.open { border-color: var(--red); background: var(--red); color: white; border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+
+.accordion-header .acc-title { font-weight: 700; font-size: 15px; }
+.accordion-header .acc-icon { font-size: 18px; transition: transform 0.3s; }
+.accordion-header.open .acc-icon { transform: rotate(180deg); }
+
+.accordion-body {
+  display: none;
+  background: white;
+  border: 1px solid var(--red);
+  border-top: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  padding: 20px;
+  animation: slideDown 0.3s ease;
+}
+
+.accordion-body.open { display: block; }
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== JADAL / MUQARANA ===== */
+.jadal-container { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+@media(max-width:600px) { .jadal-container { grid-template-columns: 1fr; } }
+
+.jadal-side {
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+
+.jadal-side.for { background: var(--blue-light); border: 2px solid var(--blue); }
+.jadal-side.against { background: #FEF2F2; border: 2px solid #FCA5A5; }
+.jadal-side.sim { background: var(--green-light); border: 2px solid var(--green); }
+.jadal-side.diff { background: var(--orange-light); border: 2px solid var(--orange); }
+
+.jadal-side h4 {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.argument-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.argument-item .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.naqd-box {
+  background: var(--yellow-light);
+  border: 1px solid var(--yellow);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.naqd-box strong { color: var(--yellow); }
+
+.philosopher-tag {
+  display: inline-block;
+  background: var(--dark);
+  color: white;
+  border-radius: 50px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  margin: 2px;
+}
+
+/* ===== MUQARANA TABLE ===== */
+.muq-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+.muq-table th { background: var(--dark); color: white; padding: 10px 14px; text-align: center; }
+.muq-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); text-align: center; }
+.muq-table tr:nth-child(even) { background: var(--gray-light); }
+.muq-table tr:hover { background: var(--red-light); }
+
+/* ===== PHILOSOPHER CARDS ===== */
+.philo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+
+.philo-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--border);
+  transition: all 0.3s;
+  perspective: 1000px;
+}
+
+.philo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--red); }
+
+.philo-card-inner {
+  position: relative;
+  width: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.philo-card.flipped .philo-card-inner { transform: rotateY(180deg); }
+
+.philo-front, .philo-back {
+  backface-visibility: hidden;
+  width: 100%;
+}
+
+.philo-back { position: absolute; top: 0; left: 0; transform: rotateY(180deg); }
+
+.philo-avatar {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  background: var(--gray-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.philo-avatar.hidden-overlay::after {
+  content: '🎭';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: white;
+}
+
+.philo-avatar.hidden-overlay {
+  position: relative;
+}
+
+.hidden-label {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  gap: 6px;
+}
+
+.philo-info { padding: 12px; }
+.philo-info h3 { font-size: 14px; font-weight: 800; margin-bottom: 4px; }
+.philo-info .courant { font-size: 11px; color: var(--gray); }
+
+.philo-back-content {
+  background: var(--dark);
+  color: white;
+  padding: 14px;
+  min-height: 220px;
+}
+
+.philo-back-content .emoji { font-size: 36px; text-align: center; margin-bottom: 10px; display: block; }
+.philo-back-content h3 { font-size: 15px; font-weight: 800; color: var(--red); margin-bottom: 8px; text-align: center; }
+.philo-back-content p { font-size: 12px; line-height: 1.6; color: rgba(255,255,255,0.85); margin-bottom: 6px; }
+.philo-back-content .citation { font-style: italic; color: var(--yellow); font-size: 11px; border-right: 3px solid var(--yellow); padding-right: 8px; margin: 8px 0; }
+.philo-camp { font-size: 11px; background: var(--red); color: white; border-radius: 6px; padding: 3px 8px; display: inline-block; margin-top: 4px; }
+
+/* ===== QUIZ ===== */
+.quiz-container { max-width: 700px; margin: 0 auto; }
+
+.quiz-mode-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.quiz-mode-btn {
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  font-family: 'Cairo', sans-serif;
+}
+
+.quiz-mode-btn:hover, .quiz-mode-btn.active { border-color: var(--red); background: var(--red-light); }
+.quiz-mode-btn .icon { font-size: 32px; margin-bottom: 8px; }
+.quiz-mode-btn h3 { font-size: 15px; font-weight: 700; color: var(--dark); }
+.quiz-mode-btn p { font-size: 12px; color: var(--gray); }
+
+.quiz-question-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.quiz-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quiz-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background: var(--red);
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.quiz-q-num { font-size: 12px; color: var(--gray); font-weight: 700; white-space: nowrap; }
+
+.quiz-question {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--dark);
+}
+
+.quiz-citation-box {
+  background: var(--gray-light);
+  border-right: 4px solid var(--red);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.quiz-options { display: grid; gap: 10px; }
+
+.quiz-option {
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  cursor: pointer;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quiz-option:hover:not(:disabled) { border-color: var(--blue); background: var(--blue-light); }
+.quiz-option.correct { border-color: var(--green); background: var(--green-light); color: #166534; }
+.quiz-option.wrong { border-color: #EF4444; background: #FEF2F2; color: #991B1B; }
+.quiz-option:disabled { cursor: not-allowed; }
+
+.quiz-option .opt-letter {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--gray-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.quiz-option.correct .opt-letter { background: var(--green); color: white; }
+.quiz-option.wrong .opt-letter { background: #EF4444; color: white; }
+
+.quiz-feedback {
+  display: none;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.quiz-feedback.show { display: flex; align-items: center; gap: 8px; }
+.quiz-feedback.correct-fb { background: var(--green-light); color: #166534; border: 1px solid var(--green); }
+.quiz-feedback.wrong-fb { background: #FEF2F2; color: #991B1B; border: 1px solid #FCA5A5; }
+
+.btn {
+  background: var(--red);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 24px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+.btn.blue { background: var(--blue); }
+.btn.blue:hover { background: #2563EB; }
+.btn.gray { background: var(--gray); }
+.btn.green { background: var(--green); }
+
+.quiz-nav { display: flex; gap: 10px; margin-top: 16px; justify-content: space-between; flex-wrap: wrap; }
+
+.quiz-score-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 40px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.score-circle {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 8px solid var(--red);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.score-circle .score-num { font-size: 32px; font-weight: 900; color: var(--red); }
+.score-circle .score-den { font-size: 14px; color: var(--gray); }
+
+/* ===== COURANTS ===== */
+.courant-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+
+.courant-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.courant-header .icon { font-size: 28px; }
+.courant-header h3 { font-size: 17px; font-weight: 800; color: white; }
+.courant-header p { font-size: 12px; color: rgba(255,255,255,0.8); }
+
+.courant-body { padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media(max-width:500px) { .courant-body { grid-template-columns: 1fr; } }
+
+.courant-item label { font-size: 11px; color: var(--gray); font-weight: 700; display: block; margin-bottom: 4px; }
+.courant-item p { font-size: 13px; color: var(--dark); font-weight: 500; line-height: 1.5; }
+
+/* ===== METHOD SECTION ===== */
+.method-steps { counter-reset: step; }
+
+.method-step {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.method-step::before {
+  counter-increment: step;
+  content: counter(step);
+  width: 36px; height: 36px;
+  background: var(--red);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.method-step-content h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.method-step-content p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+.method-step-content .example { background: var(--gray-light); border-radius: 8px; padding: 8px 12px; margin-top: 6px; font-size: 12px; font-style: italic; color: var(--dark2); }
+
+.method-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.method-tab { background: white; border: 2px solid var(--border); border-radius: var(--radius-sm); padding: 10px 16px; cursor: pointer; font-family: 'Cairo', sans-serif; font-size: 13px; font-weight: 700; color: var(--gray); transition: all 0.2s; }
+.method-tab.active { background: var(--red); border-color: var(--red); color: white; }
+
+.method-content { display: none; }
+.method-content.active { display: block; }
+
+/* ===== MINI INFO CARDS ===== */
+.info-card {
+  background: var(--red-light);
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.info-card .info-icon { font-size: 24px; flex-shrink: 0; }
+.info-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.info-card p { font-size: 13px; color: var(--gray); line-height: 1.5; }
+
+/* ===== CITATION HIGHLIGHT ===== */
+.cite {
+  background: var(--dark);
+  color: var(--yellow);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 8px 0;
+  font-style: italic;
+}
+
+.cite .cite-author { color: rgba(255,255,255,0.6); font-size: 11px; font-style: normal; display: block; margin-top: 4px; }
+
+/* ===== SCROLL ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--gray-light); }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+
+/* ===== ANIMATIONS ===== */
+.fade-in { animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .philo-avatar img{
+      border-radius:0;
+      display:block;
+    }
+    
+.philo-avatar{
+  overflow:hidden !important;
+  background:#fff !important;
+}
+.philo-avatar img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block !important;
+}
+.philo-avatar::after{
+  display:none !important;
+}
+
+.philo-avatar{
+  height:180px !important;
+  overflow:hidden !important;
+  background:#fff !important;
+}
+
+.philo-avatar img{
+  width:100% !important;
+  height:100% !important;
+  display:block !important;
+  object-fit:cover !important;
+}
+
+.hidden-overlay::after{
+  display:none !important;
+}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="header-top">📚 موقع مراجعة الفلسفة — باكالوريا الجزائر | تقني رياضي + تسيير واقتصاد</div>
+<nav class="header-nav">
+<button class="nav-btn active" onclick="showPage('accueil')">🏠 الرئيسية</button>
+<button class="nav-btn" onclick="showPage('lessons')">📚 الدروس</button>
+<button class="nav-btn" onclick="showPage('philos')">🧠 الفلاسفة</button>
+<button class="nav-btn" onclick="showPage('courants')">🌊 المذاهب</button>
+<button class="nav-btn" onclick="showPage('quiz')">✏️ الاختبار</button>
+<button class="nav-btn" onclick="showPage('method')">📝 المنهجية</button>
+</nav>
+</div>
+<!-- ========== PAGE: ACCUEIL ========== -->
+<div class="page active fade-in" id="page-accueil">
+<div class="hero">
+<h1>مراجعة <span>الفلسفة</span> بطريقة ذكية</h1>
+<p>كل ما تحتاجه للنجاح في باكالوريا الفلسفة — دروس، فلاسفة، مذاهب، اختبارات</p>
+<span class="badge">تقني رياضي</span>
+<span class="badge">تسيير واقتصاد</span>
+</div>
+<div class="section-title"><div class="tag">محتوى الموقع</div><div class="line"></div></div>
+<div class="grid-2">
+<div class="card" onclick="showPage('lessons')" style="cursor:pointer;border-right:4px solid var(--red)">
+<div style="font-size:32px;margin-bottom:10px">📚</div>
+<h3 style="font-size:16px;font-weight:800;margin-bottom:6px">الدروس والإشكاليات</h3>
+<p style="font-size:13px;color:var(--gray)">3 إشكاليات — جدلية ومقارنة بحجج ونقد</p>
+</div>
+<div class="card" onclick="showPage('philos')" style="cursor:pointer;border-right:4px solid var(--blue)">
+<div style="font-size:32px;margin-bottom:10px">🧠</div>
+<h3 style="font-size:16px;font-weight:800;margin-bottom:6px">بطاقات الفلاسفة</h3>
+<p style="font-size:13px;color:var(--gray)">اكشف الفيلسوف وتعرف على موقفه وعلاماته</p>
+</div>
+<div class="card" onclick="showPage('courants')" style="cursor:pointer;border-right:4px solid var(--green)">
+<div style="font-size:32px;margin-bottom:10px">🌊</div>
+<h3 style="font-size:16px;font-weight:800;margin-bottom:6px">المذاهب الفلسفية</h3>
+<p style="font-size:13px;color:var(--gray)">العقلانية، التجريبية، البراغماتية، الوجودية</p>
+</div>
+<div class="card" onclick="showPage('quiz')" style="cursor:pointer;border-right:4px solid var(--orange)">
+<div style="font-size:32px;margin-bottom:10px">✏️</div>
+<h3 style="font-size:16px;font-weight:800;margin-bottom:6px">اختبار نفسك</h3>
+<p style="font-size:13px;color:var(--gray)">أسئلة متعددة الخيارات + اختبار الاقتباسات</p>
+</div>
+</div>
+<div class="section-title"><div class="tag orange">أنواع المواضيع</div><div class="line"></div></div>
+<div class="grid-3">
+<div class="card-sm" style="border-top:4px solid var(--blue);text-align:center">
+<div style="font-size:28px;margin-bottom:8px">⚖️</div>
+<h4 style="font-size:14px;font-weight:800">ة</h4>
+<p style="font-size:12px;color:var(--gray);margin-top:4px">أطروحة ✦ نقيضها ✦ التركيب</p>
+</div>
+<div class="card-sm" style="border-top:4px solid var(--green);text-align:center">
+<div style="font-size:28px;margin-bottom:8px">🔍</div>
+<h4 style="font-size:14px;font-weight:800">المقارنة</h4>
+<p style="font-size:12px;color:var(--gray);margin-top:4px">التشابه ✦ الاختلاف ✦ الموقف</p>
+</div>
+<div class="card-sm" style="border-top:4px solid var(--orange);text-align:center">
+<div style="font-size:28px;margin-bottom:8px">🔎</div>
+<h4 style="font-size:14px;font-weight:800">الاستقصاء</h4>
+<p style="font-size:12px;color:var(--gray);margin-top:4px">الإشكالية ✦ التحليل ✦ الموقف</p>
+</div>
+</div>
+<div class="section-title"><div class="tag purple">نصيحة للمراجعة</div><div class="line"></div></div>
+<div class="info-card">
+<div class="info-icon">💡</div>
+<div>
+<h4>كيف تستخدم هذا الموقع؟</h4>
+<p>ابدأ بالدروس ← ثم تعلم الفلاسفة ← ثم راجع المذاهب ← واختتم بالاختبار. ركز على الحجج والنقد في كل موضوع.</p>
+</div>
+</div>
+</div>
+<!-- ========== PAGE: LESSONS ========== -->
+<div class="page fade-in" id="page-lessons">
+<!-- ISHKALIYA 1 -->
+<div class="section-title"><div class="tag">الإشكالية الأولى</div><div class="line"></div><h2>المشكلة والإشكالية الفلسفية</h2></div>
+<!-- MUQARANA -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">📌 مقارنة — المشكلة العلمية والإشكالية الفلسفية</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<p style="font-size:13px;color:var(--gray);margin-bottom:14px">كلاهما يبدأ بسؤال، لكن طبيعة السؤال والغاية منه تختلفان</p>
+<table class="muq-table">
+<tr><th>وجه المقارنة</th><th>المشكلة العلمية</th><th>الإشكالية الفلسفية</th></tr>
+<tr><td>التعريف</td><td>سؤال له إجابة محددة وقابلة للتحقق</td><td>سؤال تأملي لا إجابة قاطعة له</td></tr>
+<tr><td>الأداة</td><td>التجربة والملاحظة</td><td>العقل والتأمل</td></tr>
+<tr><td>الهدف</td><td>حل عملي ومحدد</td><td>تساؤل وفهم أعمق</td></tr>
+<tr><td>الفيلسوف الداعم</td><td>كلود برنار</td><td>أفلاطون</td></tr>
+</table>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+<div class="jadal-side sim"><h4>🤝 أوجه التشابه</h4>
+<div class="argument-item"><div class="dot" style="background:var(--green)"></div><span>كلاهما يبدأ بسؤال وتساؤل</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--green)"></div><span>كلاهما يسعى لفهم الواقع</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--green)"></div><span>الدهشة أصل كليهما (أرسطو)</span></div>
+</div>
+<div class="jadal-side diff"><h4>⚡ أوجه الاختلاف</h4>
+<div class="argument-item"><div class="dot" style="background:var(--orange)"></div><span>العلم يحل / الفلسفة تتأمل</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--orange)"></div><span>العلم قابل للقياس / الفلسفة لا</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--orange)"></div><span>العلم موضوعي / الفلسفة ذاتية</span></div>
+</div>
+</div>
+<div class="naqd-box"><strong>⚡ التداخل:</strong> لقد عملت الفلسفة على تلوين سائر العلوم فاغتنت وتحررت — <em>غوبلو</em></div>
+</div>
+</div>
+<!-- JADAL: هل الفلسفة ضرورية -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">⚖️ جدلية — هل الفلسفة ضرورية ؟</span>
+<span class="acc-icon">▼</span>
+<div style="margin-top:8px;font-size:12px;font-weight:700;color:#E8534A"># الإنسانية / الوجودية</div></div>
+<div class="accordion-body">
+<div class="jadal-container">
+<div class="jadal-side for">
+<h4 style="color:var(--blue)">✅ الأطروحة — الفلسفة ضرورية</h4>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>ديكارت:</b> العيش دون تفلسف كالذي أغمض عينيه ولم يحاول فتحها أبداً</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>أرسطو:</b> الدهشة هي التي تدفع الناس نحو التفلسف — الفلسفة فطرية</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>برتراند راسل:</b> قيمة الفلسفة تلتمس من عين عدم يقينها بالذات</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>أميرسن:</b> الفلسفة توسع عقولنا وتحررنا من عقر العرف والتقاليد</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> قد تبقى الفلسفة نظرية بعيدة عن الواقع المعاش</div>
+</div>
+<div class="jadal-side against">
+<h4 style="color:#DC2626">❌ نقيض الأطروحة — الفلسفة غير ضرورية</h4>
+<div class="argument-item"><div class="dot" style="background:#EF4444)"></div><span><b>ويليام جيمس:</b> الميتافيزيقا مجرد خرافة لا نفع منها</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>أوغست كونت:</b> حين تنتهي الفلسفة يبدأ العلم الحقيقي</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>لايبنز:</b> التفلسف الواضح تفسير بالغامض</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> العلم نفسه يحتاج إلى أسئلة فلسفية لتوجيهه</div>
+</div>
+</div>
+<div class="card-sm" style="background:var(--purple-light);border:1px solid var(--purple);margin-top:4px">
+<h4 style="color:var(--purple);margin-bottom:8px">🔄 التركيب (الخاتمة)</h4>
+<p style="font-size:13px;line-height:1.7">الفلسفة ضرورية لأنها تطرح الأسئلة التي يعجز العلم وحده عن الإجابة عنها، فكلاهما يكمل الآخر. <span class="philosopher-tag">برغسون</span></p>
+</div>
+</div>
+</div>
+<!-- ISHKALIYA 2 -->
+<div class="section-title"><div class="tag blue">الإشكالية الثانية</div><div class="line"></div><h2>فلسفة العلوم</h2></div>
+<!-- الرياضيات - أصل -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">⚖️ جدلية — أصل الرياضيات: العقل أم التجربة ؟</span>
+<span class="acc-icon">▼</span>
+<div style="margin-top:8px;font-size:12px;font-weight:700;color:#E8534A"># العقلانية / التجريبية</div></div>
+<div class="accordion-body">
+<div class="jadal-container">
+<div class="jadal-side for">
+<h4 style="color:var(--blue)">🔵 الأطروحة — الرياضيات مصدرها العقل (عقلانيون)</h4>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>أفلاطون:</b> الإنسان يتذكر المعرفة بواسطة الذهن وحده دون أي واسطة</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>ديكارت:</b> المعاني الرياضية أفكار فطرية أودعها الله فينا بالفطرة</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>كانط:</b> المعرفة الرياضية الكلية هي زيادة العقل على الواقع</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> الأفكار الفطرية لا تفسر كيف تطور الرياضيات عبر التاريخ — <em>جورج سارطون</em></div>
+</div>
+<div class="jadal-side against">
+<h4 style="color:#DC2626">🔴 نقيض الأطروحة — الرياضيات مصدرها التجربة (تجريبيون)</h4>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>جون لوك:</b> التجربة هي الأساس الوحيد لجميع معارفنا</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>جون ستيورت مل:</b> القضايا الرياضية تعميمات مصدرها التجربة</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>جون:</b> المعاني الرياضية هي نسخ للأشياء المعطاة والخطوط والدوائر عرفناها في التجربة</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> الرياضيات ضرورية وكلية لا تقبل الاستثناء كالتجربة — <em>ديكارت</em></div>
+</div>
+</div>
+<div class="card-sm" style="background:var(--purple-light);border:1px solid var(--purple);margin-top:4px">
+<h4 style="color:var(--purple);margin-bottom:8px">🔄 التركيب — هيغل وفرديناند غورنين</h4>
+<p style="font-size:13px;line-height:1.7">ليس هناك معرفة خالصة بل كل ما هو عقلي فهو واقعي وما هو واقعي فهو عقلي. لا أحد الجانبين كافٍ بل التجربة والعقل يكملان بعضهما. <span class="philosopher-tag">هيغل</span><span class="philosopher-tag">فردينان غورنين</span></p>
+</div>
+</div>
+</div>
+<!-- اليقين الرياضي -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">⚖️ جدلية — هل الرياضيات يقينية مطلقة ؟</span>
+<span class="acc-icon">▼</span>
+<div style="margin-top:8px;font-size:12px;font-weight:700;color:#E8534A"># العقلانية / التجريبية</div></div>
+<div class="accordion-body">
+<div class="jadal-container">
+<div class="jadal-side for">
+<h4 style="color:var(--blue)">✅ نعم — الرياضيات يقينية</h4>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>أقليدس:</b> وضع منهجاً رياضياً يقود إلى اليقين الكامل</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>ديكارت:</b> هندسة أقليدس تمثل اليقين الرياضي الذي لا يمكن نقضه</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>باسكال:</b> الهندسة من العلوم الوحيدة التي تنتج براهين يقينية من الخطأ</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> اليقين في الرياضيات مشروط بالمسلمات التي اعتمدها — <em>كانط</em></div>
+</div>
+<div class="jadal-side against">
+<h4 style="color:#DC2626">❌ لا — الرياضيات نسبية</h4>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>بوانكاريه:</b> الرياضيات الكلاسيكية تمتلك اليقين لكن الرياضيات الضرورية هي الإله لكل شيء</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>روبرت بلانشي:</b> الرياضيات المعاصرة تحدثت عن ثورة في القرن 19 — الهندسة اللاأقليدية</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>أدموند هورسل:</b> الهندسة التحليلية الوحيدة لديكارت الوحيدة في مجال العمل عند الرياضيين</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> حتى الهندسة اللاأقليدية منسجمة ومتماسكة في داخلها</div>
+</div>
+</div>
+</div>
+</div>
+<!-- الفرضية -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">⚖️ جدلية — هل الفرضية ضرورية في المنهج التجريبي ؟</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<div class="jadal-container">
+<div class="jadal-side for">
+<h4 style="color:var(--blue)">✅ الفرضية ضرورية</h4>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>كلود برنار:</b> التجريب بدون فرضية يؤدي إلى المخاطرة</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>بوانكاريه:</b> الملاحظة الجيدة هي التي جاءت عن سؤال محدد</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>ستيورت مل:</b> الطبيعة كتاب مفتوح والإدراك القوانين إلا أن تطلق العنان لفرضياتك</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> الفرضية قد تكون مسبقة وتؤثر على نتائج التجربة</div>
+</div>
+<div class="jadal-side against">
+<h4 style="color:#DC2626">❌ الفرضية ليست ضرورية</h4>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>نيوتن:</b> أنا أبرهن ولا أفترض — الملاحظة المباشرة كافية</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>ماجندي:</b> الملاحظة الجيدة تغنينا عن سائر الفروض — اترك عباءتك وخيالك عند باب المخبر</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>جون:</b> الفرضية قفزة نحو المجهول وطريق نحو التخمين</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> بدون فرضية لا يعرف العالم ماذا يلاحظ ولا ما يبحث عنه</div>
+</div>
+</div>
+<div class="card-sm" style="background:var(--purple-light);border:1px solid var(--purple);margin-top:4px">
+<h4 style="color:var(--purple);margin-bottom:8px">🔄 التركيب</h4>
+<p style="font-size:13px;line-height:1.7">الملاحظة توجي إلى الفرضية والفرضية تقود إلى التجربة. الفرضية أداة منهجية لا يمكن الاستغناء عنها. <span class="philosopher-tag">كلود برنار</span></p>
+</div>
+</div>
+</div>
+<!-- الاستقراء -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">⚖️ جدلية — الاستقراء: مبرر أم غير مبرر ؟</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<div class="jadal-container">
+<div class="jadal-side for">
+<h4 style="color:var(--blue)">✅ الاستقراء مبرر ومشروع</h4>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>بيكون:</b> الاستقراء هو استخلاص القواعد العامة الكلية من الأحكام الجزئية</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>بوانكاريه:</b> العلم حتمي وذلك بالبداهة</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>ابن خلدون:</b> لكل ظاهرة سبباً كافياً لحدوثها</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>لاشوليه:</b> لكل ظاهرة سبباً كافياً لحدوثها</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> لا شيء يضمن أن ما صدق في الماضي سيصدق في المستقبل</div>
+</div>
+<div class="jadal-side against">
+<h4 style="color:#DC2626">❌ الاستقراء غير مبرر</h4>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>كارل بوبر:</b> بنيان الاستقراء هش يسقط بحاله واحدة — مبدأ التفنيد</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>ديفيد هيوم:</b> بموجب العادة الذهنية نعتقد أنها الصحيحة</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>هواتن:</b> الاستقراء يضفشيء فاشية العلم لأنه يحكم على الغائب انطلاقاً من الحاضر</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> العلم بدون الاستقراء لا يمكنه بناء أي قانون عام</div>
+</div>
+</div>
+</div>
+</div>
+<!-- مقارنة: علم التاريخ vs علم النفس -->
+<div class="section-title"><div class="tag green">الإشكالية الثالثة</div><div class="line"></div><h2>المذاهب الفلسفية</h2></div>
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">🔍 مقارنة — السلوكية والتحليل النفسي</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<table class="muq-table">
+<tr><th>وجه المقارنة</th><th>السلوكية</th><th>التحليل النفسي</th></tr>
+<tr><td>الفيلسوف</td><td>واطسن</td><td>فرويد</td></tr>
+<tr><td>الموضوع</td><td>السلوك الظاهر القابل للملاحظة</td><td>اللاوعي والرغبات المكبوتة</td></tr>
+<tr><td>الأداة</td><td>الملاحظة والتجربة</td><td>التحليل والتأويل</td></tr>
+<tr><td>الهدف</td><td>ضبط السلوك والتنبؤ به</td><td>فهم الشخصية وعلاج الاضطرابات</td></tr>
+<tr><td>النقد</td><td>يهمل الحياة الداخلية النفسية</td><td>لا يمكن قياسه تجريبياً</td></tr>
+</table>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px">
+<div class="jadal-side sim"><h4>🤝 أوجه التشابه</h4>
+<div class="argument-item"><div class="dot" style="background:var(--green)"></div><span>كلاهما يدرس الإنسان</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--green)"></div><span>كلاهما يسعى لفهم السلوك</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--green)"></div><span>كلاهما يهدف للعلاج النفسي</span></div>
+</div>
+<div class="jadal-side diff"><h4>⚡ أوجه الاختلاف</h4>
+<div class="argument-item"><div class="dot" style="background:var(--orange)"></div><span>الظاهر ≠ الباطن</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--orange)"></div><span>موضوعي ≠ ذاتي</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--orange)"></div><span>تجريبي ≠ تأويلي</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- التاريخ -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">⚖️ جدلية — هل التاريخ علم ؟</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<div class="jadal-container">
+<div class="jadal-side for">
+<h4 style="color:var(--blue)">✅ التاريخ علم</h4>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>ابن خلدون:</b> التاريخ عمران الاجتماع الإنساني — علم حقيقي له قوانينه</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>بوانكاريه:</b> إن هناك انسجاماً داخلياً في الكون لا يمكن أن يقوم العلم بدونه</span></div>
+<div class="argument-item"><div class="dot" style="background:var(--blue)"></div><span><b>لايبنيتز:</b> لكل ظاهرة سبباً كافياً لحدوثها</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> التاريخ لا يمكن تكراره وإعادة إجراء تجاربه</div>
+</div>
+<div class="jadal-side against">
+<h4 style="color:#DC2626">❌ التاريخ ليس علماً</h4>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>شوبنهاور:</b> التاريخ فن وليس علم</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>عبد الرحمن الصغير:</b> يستحيل التنبؤ بالبشر لأنهم يتمتعون بالإرادة والحرية</span></div>
+<div class="argument-item"><div class="dot" style="background:#EF4444"></div><span><b>سينيوس:</b> لا وجود للتاريخ دون وثائق وكل عصر ضاعت وثائقه يظل مجهولاً للأبد</span></div>
+<div class="naqd-box"><strong>📝 النقد:</strong> العلم الحديث يقبل بعدم اليقين ومع ذلك يبقى علماً</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ============================================== -->
+<!-- ARTICLE MANQUANT 1: COMPARAISON MATHÉMATIQUES -->
+<!-- ============================================== -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">📊 قارن بين المعرفة الرياضية والمعرفة التجريبية</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<p><strong>طرح المشكلة:</strong> التطور الذي عرفته العلوم التجريبية بفضل المنهج التجريبي جعلها تصل إلى نتائج دقيقة كالنتائج الرياضية. السؤال المطروح: ما الفروقات بين المعرفة الرياضية والمعرفة التجريبية؟</p>
+
+<h4>أوجه الاتفاق:</h4>
+<ul>
+<li><strong>التعبير الرمزي:</strong> كلاهما يستخدم الرموز والمعادلات</li>
+<li><strong>الدقة:</strong> النتائج في كليهما دقيقة وقابلة للقياس</li>
+<li><strong>الاستعمال الكمي:</strong> كلاهما يعتمد على الكم والأرقام</li>
+<li><strong>البعد عن التفسيرات الذاتية:</strong> كلاهما يبتعد عن الآراء الشخصية</li>
+</ul>
+
+<h4>أوجه الاختلاف:</h4>
+<table class="muq-table" style="width:100%;margin:15px 0">
+<tr>
+<th style="text-align:right">الرياضيات</th>
+<th style="text-align:right">العلوم التجريبية</th>
+<th style="text-align:right">وجه المقارنة</th>
+</tr>
+<tr>
+<td>موضوع مجرد (أعداد، أشكال)</td>
+<td>موضوع حسي (ظواهر طبيعية)</td>
+<td>طبيعة الموضوع</td>
+</tr>
+<tr>
+<td>منهج استنتاجي (من البديهيات)</td>
+<td>منهج تجريبي استقرائي</td>
+<td>المنهج</td>
+</tr>
+<tr>
+<td>نتائج يقينية مطلقة</td>
+<td>نتائج دقيقة لكن نسبية</td>
+<td>طبيعة النتائج</td>
+</tr>
+<tr>
+<td>لا تحتاج تجربة عملية</td>
+<td>تتطلب ملاحظة وتجربة</td>
+<td>العملية</td>
+</tr>
+<tr>
+<td>خالدة لا تتغير</td>
+<td>قابلة للتطور والتصحيح</td>
+<td>الثبات</td>
+</tr>
+</table>
+
+<h4>بيان التداخل:</h4>
+<p>لكن العلوم التجريبية الحديثة استمدت نجاحها من استخدام اللغة الرياضية. الفيزياء المعاصرة اعتمدت على منهج أكسيومي رياضي. هندسة ريمان أصبحت أساساً للنظرية النسبية. هذا يظهر أن الرياضيات والعلوم التجريبية مرتبطتان ارتباطاً وظيفياً.</p>
+
+<h4>الخلاصة:</h4>
+<p>المعرفة الرياضية والمعرفة التجريبية مختلفتان في الموضوع والمنهج والنتائج، لكنهما متكاملتان. الرياضيات تعطي العلوم التجريبية الدقة والصرامة، والعلوم التجريبية تطبق الرياضيات على الواقع الحسي.</p>
+</div>
+</div>
+
+<!-- ============================================== -->
+<!-- ARTICLE MANQUANT 2: RÉFUTATION INNÉITÉ MATHÉMATIQUE -->
+<!-- ============================================== -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">⚔️ أبطل الأطروحة: "المعاني الرياضية فطرية ومصدرها العقل"</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<p><strong>الأطروحة المراد إبطالها:</strong> "المعاني الرياضية فطرية يولد الإنسان وهو مزود بها"</p>
+
+<h4>منطق الأطروحة المعارضة:</h4>
+<p>يدافع أنصار هذه الأطروحة (أفلاطون، ديكارت، كانط) بأن المعاني الرياضية:</p>
+<ul>
+<li>موجودة في العقل منذ البداية (أفكار فطرية)</li>
+<li>لا تحتاج تجربة حسية</li>
+<li>ثابتة وأزلية</li>
+<li>تختلف عن الواقع الحسي</li>
+</ul>
+
+<h4>🔍 النقد والإبطال - الحجج المضادة:</h4>
+
+<p><strong>1. حجة الملاحظة التاريخية:</strong></p>
+<p>لو كانت المعاني الرياضية فطرية، لوجدناها عند جميع الأطفال بنفس الشكل. لكن الواقع يثبت:</p>
+<ul>
+<li>الطفل يفهم الأرقام تدريجياً عبر السنوات</li>
+<li>الحضارات القديمة طورت الرياضيات تدريجياً (مصر، بابل)</li>
+<li>الأطفال يتعلمون بالعد على الأصابع والأشياء الملموسة</li>
+</ul>
+
+<p><strong>2. حجة عدم الوحدة:</strong></p>
+<p>إذا كانت المعاني الرياضية فطرية، كيف تختلف من ثقافة لأخرى؟</p>
+<ul>
+<li>الرموز الرياضية اختُرعت وتطورت (الأرقام العربية مثلاً)</li>
+<li>الهندسة تطورت من الهندسة الإقليدية إلى الهندسات اللاإقليدية</li>
+<li>لو كانت فطرية لكانت موحدة عند جميع البشر</li>
+</ul>
+
+<p><strong>3. حجة التطور التاريخي:</strong></p>
+<p>جون ستيوارت ميل يؤكد:</p>
+<blockquote class="cite">"النقط والخطوط والدوائر الموجودة في أذهاننا هي مجرد نسخ للنقط والخطوط والدوائر التي نراها في تجربتنا الحسية"</blockquote>
+
+<p><strong>4. حجة السلوك الملاحظ:</strong></p>
+<ul>
+<li>الحيوانات لا تملك المعاني الرياضية رغم وجود العقل لديها</li>
+<li>الإنسان في الحضارات البدائية لم يملك هذه المعاني</li>
+<li>التطور يثبت أن المعاني تُكتسب لا تُولد بها</li>
+</ul>
+
+<h4>📝 النقد الخاص:</h4>
+<p>أنصار الأطروحة يقعون في خطأ جسيم: إنهم يخلطون بين:</p>
+<ul>
+<li><strong>القدرة على التفكير الرياضي</strong> (فطرية) و<strong>المعاني الرياضية نفسها</strong> (مكتسبة)</li>
+<li>العقل الإنساني بطبيعته يستطيع إدراك الكميات، لكن المعاني التفصيلية تأتي من التجربة</li>
+</ul>
+
+<h4>✅ الخاتمة:</h4>
+<p>الأطروحة <strong>باطلة وغير مدعومة</strong> بأدلة قوية. التاريخ والملاحظة والتطور الحضاري كلها تثبت أن المعاني الرياضية:</p>
+<ul>
+<li>📍 نشأت من التجربة الحسية (الحساب، الهندسة العملية)</li>
+<li>📍 تطورت مع الزمن عبر حضارات متعددة</li>
+<li>📍 تُكتسب عبر التعليم والممارسة، ليست فطرية</li>
+<li>📍 مستقلة عن التجربة بعد اكتسابها، لكن أصلها تجريبي</li>
+</ul>
+</div>
+</div>
+
+<!-- ============================================== -->
+<!-- ARTICLE MANQUANT 3: TEXTE BUFFON -->
+<!-- ============================================== -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">📖 تحليل نص: بوفون حول طبيعة الرياضيات</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<p><strong>النص الأصلي لبوفون:</strong></p>
+<div class="cite" style="font-size:14px;margin:15px 0">
+"من يدلي في العلوم الرياضية بأن قضية ما هي قضية حقه فإنه ال يدلي إال ما يلي: «أن هذه القضية تستنتج استنتاجا منطقيا من قضايا أخرى بدأت بالتسليم بها». فالرياضيات علوم اصطلاحية... الحقائق الرياضية يقتصر إذن على أفكار تشكل وحدة ذاتية، وليس لها أي وجود حقيقي"
+</div>
+
+<h4>🔍 تحليل النص:</h4>
+
+<p><strong>1. الفكرة المركزية:</strong></p>
+<p>بوفون يعتقد أن الرياضيات علم <strong>اصطلاحي وليس طبيعياً</strong>. معنى ذلك:</p>
+<ul>
+<li>الرياضيات قائمة على تعريفات من وضع الإنسان</li>
+<li>ليست اكتشافاً بل اختراعاً</li>
+<li>الحقائق الرياضية لا وجود لها في الواقع</li>
+</ul>
+
+<p><strong>2. الاستنتاج المنطقي فقط:</strong></p>
+<p>حقيقة رياضية = استنتاج منطقي من فروضات مقبولة مقدماً</p>
+<div style="background:var(--blue-light);padding:15px;border-radius:8px;margin:10px 0">
+البديهيات → الاستنتاج المنطقي → القضايا (النتائج)
+</div>
+
+<p><strong>3. عدم الواقعية:</strong></p>
+<p>بوفون يؤكد أن الأفكار الرياضية:</p>
+<ul>
+<li>🔴 لا وجود حقيقي لها في الطبيعة</li>
+<li>🔴 مجرد وحدات ذاتية معزولة</li>
+<li>🔴 لا علاقة لها بالواقع الحسي</li>
+</ul>
+
+<h4>📊 المقولة: "الرياضيات اصطلاحية":</h4>
+<p>المقصود:</p>
+<table class="muq-table" style="width:100%;margin:10px 0">
+<tr>
+<th>الرياضيات الاصطلاحية</th>
+<th>العلوم الطبيعية</th>
+</tr>
+<tr>
+<td>نبدأ بفروضات مختارة</td>
+<td>ندرس الطبيعة كما هي</td>
+</tr>
+<tr>
+<td>ننسج نسيجاً منطقياً</td>
+<td>ندرك القوانين الواقعية</td>
+</tr>
+<tr>
+<td>النتائج "صحيحة" مقابل الفروضات</td>
+<td>النتائج "صحيحة" مقابل الواقع</td>
+</tr>
+<tr>
+<td>لا معنى لها خارج النسق</td>
+<td>لها معنى في الطبيعة</td>
+</tr>
+</table>
+
+<h4>⚖️ التقييم:</h4>
+
+<p><strong>موافقة الحجة:</strong></p>
+<ul>
+<li>✓ صحيح أن الرياضيات تبدأ بفروضات مختارة</li>
+<li>✓ صحيح أن الأرقام والأشكال المجردة لا وجود مادي لها</li>
+<li>✓ صحيح أن الاستنتاج منطقي وليس تجريبي</li>
+</ul>
+
+<p><strong>نقد الحجة:</strong></p>
+<ul>
+<li>✗ لكن افتراضاتنا ليست عشوائية - مستوحاة من الواقع</li>
+<li>✗ الرياضيات تطبق بنجاح على الطبيعة (الفيزياء)</li>
+<li>✗ عدم وجود مادي لا يعني عدم وجود حقيقي</li>
+<li>✗ البديهيات الرياضية ليست مختارة عشوائياً</li>
+</ul>
+
+<h4>💡 الخلاصة:</h4>
+<p>رأي بوفون يعكس موقفاً <strong>"تقليدياً"</strong> في فلسفة الرياضيات يسمى <strong>الاصطلاحية (Conventionalism)</strong>:</p>
+<ul>
+<li>الرياضيات <strong>ليست</strong> اكتشافاً طبيعياً</li>
+<li>الرياضيات <strong>هي</strong> اختراع من صنع الإنسان</li>
+<li>الحقائق الرياضية نسبية لنسقها (لا معنى خارج النسق)</li>
+</ul>
+
+<p>لكن هذا الرأي <strong>تطرفي جداً</strong> لأنه يهمل الواقعية الجزئية للرياضيات في تطبيقاتها العملية.</p>
+</div>
+</div>
+
+<!-- ============================================== -->
+<!-- ARTICLE MANQUANT 4: RÔLE DE L'HYPOTHÈSE -->
+<!-- ============================================== -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">🎯 دور الفرضية في المنهج التجريبي</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<p><strong>السؤال المطروح:</strong> هل يمكن الاستغناء عن الفرضية في المنهج التجريبي؟</p>
+
+<h4>🔴 الموقف الأول: الفرضية ضرورية جداً (كلود برنار)</h4>
+
+<p><strong>مقولة برنار الشهيرة:</strong></p>
+<div class="cite">"الفرضية هي مبدأ كل برهنة وكل اختراع إنها تنشأ عن نوع من الشعور السابق للعقل"</div>
+
+<p><strong>الحجج:</strong></p>
+<ul>
+<li><strong>الفرضية تنظم البحث:</strong> بدونها ندخل المخبر عشوائياً</li>
+<li><strong>أمثلة من التاريخ:</strong>
+  <ul>
+    <li>باستور: افترض أن التعفن سببه جراثيم (لم يرها مباشرة!)</li>
+    <li>فرانسوا أوبير: كان أعمى لكن استخدم الخيال العقلي</li>
+  </ul>
+</li>
+<li><strong>الفرضية توجه الملاحظة:</strong> نلاحظ ما نبحث عنه</li>
+<li><strong>الفرضية تجاوز العوائق:</strong> تساعد على فهم الظواهر الغامضة</li>
+</ul>
+
+<p><strong>قول بوانكاريه:</strong></p>
+<div class="cite">"إن التجريب دون فكرة سابقة غير ممكن ألنه سيجعل كل تجربة عميقة"</div>
+
+<h4>🟢 الموقف الثاني: رفض الفرضية (ماجندي، جون ستيوارت ميل)</h4>
+
+<p><strong>مقولة ماجندي الشهيرة:</strong></p>
+<div class="cite">"اترك عباءتك وخيالك عند باب المخبر"</div>
+
+<p><strong>الحجج:</strong></p>
+<ul>
+<li><strong>الفرضية تبعدنا عن الواقع:</strong> الخيال مصدر أخطاء</li>
+<li><strong>المنهج الاستقرائي كافٍ:</strong> ملاحظة بسيطة + تجربة = نتيجة</li>
+<li><strong>مثال من التاريخ:</strong> اكتشاف تكون الندى:
+  <ul>
+    <li>ويلز لاحظ ببساطة تكون الندى على المرآة</li>
+    <li>استخدم الملاحظة البسيطة فقط، لا فرضية</li>
+    <li>اكتشف أن السبب هو انخفاض الحرارة</li>
+  </ul>
+</li>
+<li><strong>قواعس الاستقراء تكفي:</strong> (قاعدة الاتفاق، الاختلاف، البواقي، التلازم)</li>
+</ul>
+
+<p><strong>قول جون ستيوارت ميل:</strong></p>
+<div class="cite">"إن الطبيعة كتاب مفتوح إدراك القوانين التي تتحكم فيها ما عليك إال أن تطلق العنان لحواسك"</div>
+
+<h4>⚪ الموقف الثالث: التركيب (إيمانويل كانط)</h4>
+
+<p><strong>رأي كانط التوفيقي:</strong></p>
+<div class="cite">"ينبغي أن يتقدم العقل إلى الطبيعة ماسكا بيد المبادئ وباليد الأخرى التجريب الذي تخيله وفق تلك المبادئ"</div>
+
+<p><strong>المقصود:</strong></p>
+<ul>
+<li>🔵 العقل والتجربة <strong>معاً</strong> وليس أحدهما</li>
+<li>🔵 الفرضية ضرورية <strong>لكن مضبوطة</strong> بالمنطق</li>
+<li>🔵 التجربة تختبر الفرضية</li>
+<li>🔵 النتيجة من تفاعل الاثنين</li>
+</ul>
+
+<h4>📊 جدول المقارنة:</h4>
+<table class="muq-table" style="width:100%;margin:15px 0">
+<tr>
+<th>الحكم</th>
+<th>الموقف</th>
+<th>الممثل</th>
+</tr>
+<tr>
+<td>الفرضية <strong>ضرورية</strong></td>
+<td>العقل أساس</td>
+<td>برنار، بوانكاريه</td>
+</tr>
+<tr>
+<td>الفرضية <strong>معيقة</strong></td>
+<td>الملاحظة أساس</td>
+<td>ماجندي، ميل</td>
+</tr>
+<tr>
+<td>الفرضية + التجربة</td>
+<td><strong>معاً</strong> مطلوبان</td>
+<td>كانط، شارل باشلار</td>
+</tr>
+</table>
+
+<h4>✅ الخلاصة العلمية:</h4>
+
+<p><strong>الحقيقة:</strong> <strong>الفرضية ضرورية لا يمكن الاستغناء عنها!</strong></p>
+
+<p><strong>السبب:</strong></p>
+<ul>
+<li>1️⃣ <strong>تنظيم البحث:</strong> بدون فرضية = عشوائية</li>
+<li>2️⃣ <strong>توجيه الملاحظة:</strong> نلاحظ ما نتوقعه</li>
+<li>3️⃣ <strong>تفسير النتائج:</strong> بدونها لا معنى للنتائج</li>
+<li>4️⃣ <strong>التنبؤ:</strong> الفرضية تسمح بالتنبؤ بظواهر جديدة</li>
+<li>5️⃣ <strong>الاكتشافات العظيمة:</strong> كلها بدأت بفرضيات (نيوتن، أينشتاين)</li>
+</ul>
+
+<p><strong>قول غاستون باشلار الحديث:</strong></p>
+<div class="cite">"إن التجربة والعقل مرتبطان في التفكير العلمي فالتجربة في حاجة إلى أن تفهم والعقالنية في حاجة إلى أن تطبق"</div>
+
+<p><strong>💡 النتيجة النهائية:</strong></p>
+<p>لا يمكن الاستغناء عن الفرضية في المنهج التجريبي. الفرضية و التجربة <strong>متكاملتان لا منفصلان</strong>. العلم = خيال منظم + اختبار دقيق.</p>
+</div>
+</div>
+
+<!-- ============================================== -->
+<!-- ARTICLE MANQUANT 5: RÉFUTATION BONNAUD -->
+<!-- ============================================== -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">🧬 فند أطروحة بونوف: البيولوجيا التحليلية</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<p><strong>الأطروحة المراد فندها:</strong></p>
+<div class="cite" style="font-size:14px">"ليس من الغريب إطالقا إثبات أن البيولوجيا التحليلية (التشريحية) تقضي عمليا على موضوع دراستها"</div>
+
+<p><strong>معنى الأطروحة:</strong> عندما نحلل الكائن الحي بتشريحه وفصل أعضاؤه، نقتل الحياة فيه. إذن البيولوجيا التحليلية تقضي على موضوعها!</p>
+
+<h4>🔴 منطق بونوف (الاعتراض على التجريب):</h4>
+
+<p><strong>الحجة الأساسية:</strong></p>
+<ul>
+<li>الكائن الحي <strong>كل معقد</strong> ومتشابك</li>
+<li>عزل عضو من الجسم = تغيير طبيعته</li>
+<li>الملاحظة العلمية تتطلب عزل المتغيرات</li>
+<li>لكن عزل أي جزء = موت الكائن الحي</li>
+<li>إذن: البيولوجيا لا يمكنها أن تكون علماً تجريبياً!</li>
+</ul>
+
+<p><strong>مثال بونوف:</strong></p>
+<p>تشريح القلب أثناء دراسته = إيقاف نبضاته = موته</p>
+
+<h4>✅ الرد والفندة:</h4>
+
+<p><strong>1. التطور التقني حل المشكلة:</strong></p>
+<ul>
+<li>🔧 الأجهزة الحديثة تسمح بملاحظة العمليات الحية بدون تشريح</li>
+<li>🔧 التصوير الطبقي والرنين المغناطيسي يدرسان الأعضاء حية</li>
+<li>🔧 المجهر الإلكتروني يفحص الخلايا بدون قتلها</li>
+</ul>
+
+<p><strong>2. العلماء الرواد ثبتوا أن التجريب ممكن:</strong></p>
+<ul>
+<li>💊 <strong>كلود برنار:</strong> أجرى تجارب ناجحة على الكبد والبنكرياس</li>
+<li>💊 <strong>باستور:</strong> اكتشف الجراثيم بتجارب دقيقة بدون تشريح كامل</li>
+<li>💊 الفسيولوجيا الحديثة أثبتت نجاح المنهج التجريبي</li>
+</ul>
+
+<p><strong>3. الطب الحديث ينسف الأطروحة:</strong></p>
+<ul>
+<li>🏥 <strong>زراعة الأعضاء:</strong> نحتفظ بالكائن حياً أثناء الدراسة</li>
+<li>🏥 <strong>الجراحة المجهرية:</strong> تعزل أعضاء صغيرة وتفحصها</li>
+<li>🏥 <strong>البيولوجيا الجزيئية:</strong> تدرس الحياة على مستوى الجزيئات</li>
+</ul>
+
+<h4>🎯 النقد الفلسفي للأطروحة:</h4>
+
+<p><strong>المشكلة الأساسية:</strong></p>
+<p>بونوف خلط بين:</p>
+<ul>
+<li>❌ <strong>الملاحظة الحية:</strong> مشاهدة الكائن وهو حي (صعبة)</li>
+<li>✓ <strong>دراسة الظواهر الحية:</strong> فحص العمليات الحيوية (ممكن)</li>
+</ul>
+
+<p><strong>الخطأ المنطقي:</strong></p>
+<p>من أن التشريح القديم يقتل الكائن → لا يمكن أي بيولوجيا تجريبية</p>
+
+<p>لكن هذا خطأ! لأن:</p>
+<ul>
+<li>التقنيات الحديثة توفر بدائل</li>
+<li>يمكن دراسة الحي دون قتله</li>
+<li>الحياة يمكن أن تُدرس حية مباشرة</li>
+</ul>
+
+<h4>💡 الأمثلة العملية للرد:</h4>
+
+<table class="muq-table" style="width:100%;margin:10px 0">
+<tr>
+<th>الآن (رد الأطروحة)</th>
+<th>الماضي (صحة الأطروحة؟)</th>
+</tr>
+<tr>
+<td>التصوير الرنيني على مريض حي</td>
+<td>التشريح فقط (قتل الكائن)</td>
+</tr>
+<tr>
+<td>مراقبة ضربات القلب بدون فتح الصدر</td>
+<td>تشريح القلب = موته</td>
+</tr>
+<tr>
+<td>دراسة الخلايا الحية تحت المجهر</td>
+<td>تشريح الخلايا = موتها</td>
+</tr>
+<tr>
+<td>تجارب على الحيوان الحي كامل</td>
+<td>تشريح الحيوان = قتله</td>
+</tr>
+</table>
+
+<h4>📈 التطور العلمي ينسف الأطروحة:</h4>
+
+<p><strong>البيولوجيا الحديثة:</strong></p>
+<ul>
+<li>🧪 <strong>البيولوجيا الجزيئية:</strong> دراسة الحياة على مستوى الجزيئات</li>
+<li>🧪 <strong>الجينوميكا:</strong> فهم الوراثة دون قتل الكائن</li>
+<li>🧪 <strong>الفيزيولوجيا:</strong> دراسة وظائف الأعضاء مباشرة</li>
+<li>🧪 <strong>الإحياء البحرية:</strong> دراسة الكائنات البحرية حية</li>
+</ul>
+
+<h4>✨ الخلاصة:</h4>
+
+<p><strong>أطروحة بونوف باطلة وغير مدعومة!</strong></p>
+
+<p><strong>الأسباب:</strong></p>
+<ul>
+<li>1️⃣ التقنيات الحديثة أثبتت خطأ افتراضه الأساسي</li>
+<li>2️⃣ يمكن دراسة الكائنات الحية دون قتلها</li>
+<li>3️⃣ البيولوجيا التجريبية نجحت بشهادة تطبيقاتها (الطب، الزراعة)</li>
+<li>4️⃣ الحياة يمكن أن تُدرس في حالتها الطبيعية</li>
+</ul>
+
+<p><strong>الخطأ في الأطروحة:</strong></p>
+<p>خلط الأداة (التشريح الفاجع) بالموضوع (دراسة الحياة). تطور الأدوات حل المشكلة.</p>
+</div>
+</div>
+
+<!-- RETOUR À L'ORGANISATION -->
+</div>
+</div>
+
+<!-- ============================================== -->
+<!-- ARTICLE PARTIEL 1: AMÉLIORATION TEXTE DILTHEY -->
+<!-- ============================================== -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">📖 تحليل نص: دلتاي - الفهم والتفسير (Verstehen vs Erklären)</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<h4>النص الأصلي لدلتاي:</h4>
+<div class="cite" style="font-size:14px;margin:15px 0">
+"من حق علوم الفكر أن تحدد بنفسها منهجها بحسب موضوعها. فعلى العلوم أن تنطلق من أعم مفاهيم المنهجية ، وتسعى إلى تطبيقها على مواضيعها الخاصة فتصل بذلك إلى أن تنشئ في ميدانها المخصوص مناهج ومبادئ أكثر دقة... إن التحام الذّات بالموضوع في العلوم الإنسانية .... يترتب على ذلك أن المناهج التي نعتمدها لدراسة الحياة الفكرية والتاريخ والمجتمع مختلفة أشد الاختلاف عن المناهج التي أدت إلى معرفة الطبيعة"
+</div>
+
+<h4>🔍 السياق التاريخي:</h4>
+<p><strong>ويلهام دلتاي (Wilhelm Dilthey, 1833-1911)</strong> كان فيلسوفاً ألمانياً مؤسساً لفلسفة العلوم الإنسانية. واجه مشكلة جوهرية:</p>
+<ul>
+<li>العلوم الطبيعية (الفيزياء، الكيمياء) تستخدم المنهج التجريبي بنجاح</li>
+<li>لكن العلوم الإنسانية (التاريخ، علم الاجتماع، علم النفس) مختلفة تماماً</li>
+<li>هل يجب نقل نفس المنهج إلى العلوم الإنسانية؟</li>
+</ul>
+
+<h4>💡 الفكرة الأساسية:</h4>
+<p><strong>دلتاي يرفض نقل منهج العلوم الطبيعية!</strong> لأن الفرق جوهري:</p>
+
+<table class="muq-table" style="width:100%;margin:15px 0">
+<tr>
+<th style="text-align:right">العلوم الإنسانية</th>
+<th style="text-align:right">العلوم الطبيعية</th>
+<th style="text-align:right">المعيار</th>
+</tr>
+<tr>
+<td><strong>الفهم</strong> (Verstehen)</td>
+<td><strong>التفسير</strong> (Erklären)</td>
+<td>المنهج</td>
+</tr>
+<tr>
+<td>ملاحظة داخلية (من الداخل)</td>
+<td>ملاحظة خارجية (من الخارج)</td>
+<td>نقطة النظر</td>
+</tr>
+<tr>
+<td>إدراك حدسي للمعنى</td>
+<td>رصد علاقات سببية</td>
+<td>الهدف</td>
+</tr>
+<tr>
+<td>تجربة معاشة مباشرة</td>
+<td>معطيات منفصلة مشتتة</td>
+<td>طبيعة الموضوع</td>
+</tr>
+<tr>
+<td>كل معيش موحد</td>
+<td>ظواهر معزولة</td>
+<td>البنية</td>
+</tr>
+</table>
+
+<h4>📝 المصطلحات الأساسية:</h4>
+
+<p><strong>1. الفهم (Verstehen - Understanding):</strong></p>
+<ul>
+<li>🔵 إدراك حدسي للمعاني والدلالات</li>
+<li>🔵 النفاذ إلى الأبعاد الإنسانية (النوايا، القيم، الأهداف)</li>
+<li>🔵 "قراءة" الظاهرة من الداخل</li>
+<li>🔵 مثال: فهم السلوك التاريخي للإنسان</li>
+</ul>
+
+<p><strong>2. التفسير (Erklären - Explanation):</strong></p>
+<ul>
+<li>🔴 رصد الروابط السببية موضوعية</li>
+<li>🔴 صياغة القوانين الطبيعية</li>
+<li>🔴 دراسة من الخارج بدون تدخل الذات</li>
+<li>🔴 مثال: تفسير انصهار المعادن بالحرارة</li>
+</ul>
+
+<h4>🎯 الحجة الأساسية:</h4>
+
+<p><strong>المشكلة:</strong></p>
+<p>إذا حاولنا تفسير الظاهرة الإنسانية تفسيراً ميكانيكياً (كما في الطبيعة):</p>
+<ul>
+<li>❌ نفقد المعنى والدلالة</li>
+<li>❌ نقتل الحياة في الموضوع</li>
+<li>❌ نستبعد القصد والنية والقيم</li>
+<li>❌ نختزل الإنسان إلى آلة</li>
+</ul>
+
+<p><strong>الحل:</strong></p>
+<p>استخدام الفهم بدلاً من التفسير:</p>
+<ul>
+<li>✓ الإقرار بأن الذات ملتحمة بالموضوع</li>
+<li>✓ احترام الطبيعة الإنسانية للظاهرة</li>
+<li>✓ دراسة الموضوع من داخل التجربة المعاشة</li>
+<li>✓ فهم الدلالات والأهداف والمعاني</li>
+</ul>
+
+<h4>📖 مثال توضيحي:</h4>
+
+<p><strong>دراسة حادثة تاريخية:</strong></p>
+
+<p><strong>❌ التفسير (خطأ):</strong></p>
+<p>"الحرب اندلعت بسبب X وحقيقة اقتصادية Y"</p>
+<ul>
+<li>نختزل الحادثة إلى أسباب مادية</li>
+<li>نستبعد آراء الزعماء والشعب</li>
+<li>نتجاهل الرغبات والتطلعات</li>
+</ul>
+
+<p><strong>✓ الفهم (صحيح):</strong></p>
+<p>"دراسة الحرب في سياقها الكامل:"</p>
+<ul>
+<li>الأسباب الاقتصادية (موضوعية)</li>
+<li>+آراء الزعماء (نوايا)</li>
+<li>+مشاعر الشعب (قيم)</li>
+<li>+الأهداف المرغوبة (غايات)</li>
+<li>+الفهم الكلي للحادثة</li>
+</ul>
+
+<h4>🏛️ التطبيقات في العلوم الإنسانية:</h4>
+
+<p><strong>التاريخ:</strong></p>
+<ul>
+<li>لا نشرح الأحداث كآلات</li>
+<li>نفهم نوايا الأشخاص التاريخيين</li>
+<li>ندرس الثقافة والقيم السائدة</li>
+</ul>
+
+<p><strong>علم الاجتماع:</strong></p>
+<ul>
+<li>لا نختزل السلوك الاجتماعي</li>
+<li>نفهم المعاني الثقافية</li>
+<li>ندرس التفاعلات الإنسانية</li>
+</ul>
+
+<p><strong>علم النفس:</strong></p>
+<ul>
+<li>لا نعامل النفس كآلة</li>
+<li>نفهم الدوافع والرغبات</li>
+<li>ندرس التجربة الحية للشخص</li>
+</ul>
+
+<h4>⚖️ النقد والتطورات:</h4>
+
+<p><strong>النقد الموجه لدلتاي:</strong></p>
+<ul>
+<li>قد يكون الفهم ذاتياً جداً</li>
+<li>كيف نضمن الموضوعية في الفهم؟</li>
+<li>هل الفهم كافٍ بدون بعض التفسير؟</li>
+</ul>
+
+<p><strong>الحل الحديث (التوفيق):</strong></p>
+<p>الدراسات الإنسانية الحديثة تستخدم <strong>كليهما:</strong></p>
+<ul>
+<li>💚 التفسير: لفهم الشروط الموضوعية</li>
+<li>💚 الفهم: لإدراك المعاني والدلالات</li>
+<li>💚 التوازن: بين الموضوعية والذاتية</li>
+</ul>
+
+<h4>✨ الخلاصة:</h4>
+
+<p><strong>دلتاي أحدث ثورة في فلسفة العلوم:</strong></p>
+<ul>
+<li>📍 رفضه نقل منهج واحد لكل العلوم</li>
+<li>📍 تأكيده على خصوصية الموضوع الإنساني</li>
+<li>📍 تطويره لمفهوم "الفهم" الحدسي</li>
+<li>📍 إعادة تقييمه للعلوم الإنسانية كعلوم حقيقية</li>
+</ul>
+
+<p><strong>المبدأ الذهبي:</strong></p>
+<div class="cite">"لكل علم منهجه بحسب موضوعه"</div>
+</div>
+</div>
+
+<!-- ============================================== -->
+<!-- ARTICLE PARTIEL 2: RENFORCEMENT BIOLOGIE -->
+<!-- ============================================== -->
+<div class="accordion">
+<div class="accordion-header" onclick="toggleAcc(this)">
+<span class="acc-title">🧬 تعزيز: الحتمية في البيولوجيا (أمثلة وتطبيقات)</span>
+<span class="acc-icon">▼</span>
+</div>
+<div class="accordion-body">
+<p><strong>المسألة المركزية:</strong> هل الظواهر الحية تخضع للحتمية كالظواهر الجامدة؟</p>
+
+<h4>1️⃣ أمثلة كلود برنار (التجارب الكلاسيكية):</h4>
+
+<p><strong>التجربة 1: الأرنب والعشب</strong></p>
+<ul>
+<li>🔬 خطوة 1: أرنب عادي يأكل عشب → بول قلوي</li>
+<li>🔬 خطوة 2: نفس الأرنب يحرم من العشب → بول حمضي</li>
+<li>🔬 خطوة 3: نفس الأرنب يعود للعشب → بول قلوي مجدداً</li>
+<li>🔬 النتيجة: <strong>نفس السبب = نفس النتيجة دائماً</strong></li>
+</ul>
+
+<p><strong>الدرس:</strong> هذا يثبت الحتمية في الكائن الحي!</p>
+
+<p><strong>التجربة 2: تأثير درجة الحرارة على الهضم</strong></p>
+<ul>
+<li>🧪 الجهاز الهضمي يعمل أسرع بحرارة معينة</li>
+<li>🧪 تقليل الحرارة → هضم أبطأ</li>
+<li>🧪 كل مرة: نفس النتيجة</li>
+<li>🧪 لا عشوائية!</li>
+</ul>
+
+<h4>2️⃣ الأمثلة الحديثة (البيولوجيا المعاصرة):</h4>
+
+<p><strong>أ) الجينات والوراثة:</strong></p>
+<ul>
+<li>🧬 الجين المسؤول عن اللون = حتمي</li>
+<li>🧬 الأم والأب لهما جينات محددة → الطفل وراثة محتومة</li>
+<li>🧬 مثال: فصيلة الدم تتوارث بقانون مندل (100% حتمي)</li>
+</ul>
+
+<p><strong>ب) الاستجابة المناعية:</strong></p>
+<ul>
+<li>🛡️ جسم غريب معين → استجابة محددة</li>
+<li>🛡️ الفيروس X → جهاز المناعة ينتج أجسام مضادة محددة</li>
+<li>🛡️ هذه الاستجابة <strong>حتمية وليست عشوائية</strong></li>
+</ul>
+
+<p><strong>ج) الاستقلاب الخلوي:</strong></p>
+<ul>
+<li>⚡ الغلوكوز + الأكسجين → الطاقة (ATP)</li>
+<li>⚡ هذا يحدث <strong>دائماً</strong> في نفس الخلايا</li>
+<li>⚡ التفاعل الكيميائي <strong>محتوم</strong> حسب القوانين الكيميائية</li>
+</ul>
+
+<h4>3️⃣ حالات خاصة تبدو عشوائية لكنها حتمية:</h4>
+
+<p><strong>الطفرات الجينية:</strong></p>
+<ul>
+<li>❓ تبدو عشوائية؟ لا!</li>
+<li>✓ سببها: إشعاعات، مواد كيميائية، خطأ في نسخ الحمض</li>
+<li>✓ إذا تعرضنا لنفس المواد → طفرات متشابهة</li>
+<li>✓ <strong>حتمية خفية</strong> خلف ما يبدو عشوائياً</li>
+</ul>
+
+<p><strong>السلوك الحيواني:</strong></p>
+<ul>
+<li>🐜 النملة تتبع نفس الطريق دائماً (حتمي)</li>
+<li>🐝 النحلة ترقص نفس الرقصة للإشارة نفسها (حتمي)</li>
+<li>🦅 الصقر يصيد بنفس الأسلوب (غريزة حتمية)</li>
+</ul>
+
+<h4>4️⃣ الفرق بين الحتمية والغائية:</h4>
+
+<p><strong>❌ خطأ شائع:</strong> الخلط بين:</p>
+<ul>
+<li>الحتمية = السببية (سبب معروف → نتيجة معروفة)</li>
+<li>الغائية = الهدف (الكائن يعمل من أجل غاية)</li>
+</ul>
+
+<p><strong>✓ التوضيح:</strong></p>
+<ul>
+<li>الكبد: <strong>محتوم</strong> أن يصنع الصفراء (حتمية)</li>
+<li>الكبد يصنعها <strong>من أجل</strong> هضم الدهون (غائية)</li>
+<li>كلاهما يمكن أن يكون حقيقياً معاً!</li>
+</ul>
+
+<h4>5️⃣ البرهان الإحصائي على الحتمية:</h4>
+
+<p><strong>في مجتمع من الكائنات:</strong></p>
+<ul>
+<li>📊 1000 سمكة في نفس الظروف → تنمو متشابهة</li>
+<li>📊 1000 فأر بنفس التغذية → نفس الوزن تقريباً</li>
+<li>📊 هذه <strong>الانتظامية الإحصائية</strong> = دليل على الحتمية</li>
+</ul>
+
+<h4>6️⃣ الاستثناءات الظاهرية والحقيقية:</h4>
+
+<p><strong>الاستثناءات الظاهرية (ليست استثناءات):</strong></p>
+<ul>
+<li>🔍 الفرد المختلف ≠ انتهاك الحتمية</li>
+<li>🔍 بل هو <strong>نتيجة عوامل حتمية مختلفة</strong></li>
+<li>🔍 مثال: طفل قصير = وراثة + سوء تغذية (كل حتمي)</li>
+</ul>
+
+<p><strong>الاستثناءات الحقيقية (نادرة جداً):</strong></p>
+<ul>
+<li>⚠️ تشوهات خلقية غير متوقعة</li>
+<li>⚠️ لكن حتى هذه لها أسباب (لم نكتشفها بعد)</li>
+</ul>
+
+<h4>7️⃣ الحتمية vs حرية الإرادة (في الإنسان):</h4>
+
+<p><strong>هل الإنسان حتمي أم حر؟</strong></p>
+<ul>
+<li>🧠 الدماغ = عضو بيولوجي = خاضع للحتمية</li>
+<li>🧠 لكن الدماغ معقد جداً → حرية ظاهرية</li>
+<li>🧠 الحرية النسبية ممكنة حتى مع الحتمية الأساسية</li>
+</ul>
+
+<h4>8️⃣ التطبيقات العملية للحتمية البيولوجية:</h4>
+
+<p><strong>الطب:</strong></p>
+<ul>
+<li>💊 تشخيص دقيق = فهم الحتمية في الأعراض</li>
+<li>💊 علاج مضمون = معرفة ردة الفعل الحتمية للدواء</li>
+<li>💊 جرعة محددة = نتيجة محددة متوقعة</li>
+</ul>
+
+<p><strong>الزراعة:</strong></p>
+<ul>
+<li>🌾 بذرة + ماء + شمس + تربة = محصول محدد</li>
+<li>🌾 نفس الشروط = نفس الإنتاج تقريباً</li>
+<li>🌾 التنبؤ بالحصادة (حتمي)</li>
+</ul>
+
+<p><strong>علم البيئة:</strong></p>
+<ul>
+<li>🌍 زيادة درجة الحرارة → هجرة الحيوانات (حتمي)</li>
+<li>🌍 القضضاء على النبات X → انقراض الحيوان Y (حتمي)</li>
+</ul>
+
+<h4>9️⃣ الخلاصة العلمية:</h4>
+
+<p><strong>نعم، الحتمية تنطبق على البيولوجيا!</strong></p>
+
+<ul>
+<li>✅ تجارب برنار أثبتت ذلك</li>
+<li>✅ الحديثة (الجينات، المناعة) تؤكده</li>
+<li>✅ الإحصائيات تدعمه</li>
+<li>✅ التطبيقات العملية تستخدمه</li>
+</ul>
+
+<p><strong>لكن:</strong></p>
+<ul>
+<li>🔹 الحتمية لا تعني العشوائية = سبب محتوم</li>
+<li>🔹 الغائية لا تنفي الحتمية = سبب + غاية معاً</li>
+<li>🔹 التعقيد لا ينفي الحتمية = أسباب معقدة لكن محتومة</li>
+</ul>
+
+<p><strong>🎯 المبدأ النهائي:</strong></p>
+<div class="cite">"الحياة خاضعة لقوانين حتمية دقيقة، لكن هذه الحتمية معقدة وعميقة"</div>
+</div>
+</div>
+
+
+<div class="page fade-in" id="page-philos">
+<div class="section-title"><div class="tag">بطاقات الفلاسفة</div><div class="line"></div></div>
+<div class="info-card" style="background:var(--blue-light);border-color:#BFDBFE">
+<div class="info-icon">👆</div>
+<div><h4>اضغط على البطاقة لاكتشاف الفيلسوف</h4><p>كل بطاقة مخفية — اضغط لترى اسمه وموقفه الفلسفي</p></div>
+</div>
+<div class="philo-grid" id="philo-grid"></div>
+<div class="section-title" style="margin-top:40px">
+<div class="tag purple">فلاسفة إضافيون</div>
+<div class="line"></div>
+</div>
+<div class="philo-grid">
+<div class="philo-card">
+<div class="philo-card-inner">
+<div class="philo-front">
+<div class="philo-avatar"><img src="data:image/svg+xml;base64,CiAgICA8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiPgogICAgICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRTg1MzRBIi8+CiAgICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjE0MCIgcj0iNzAiIGZpbGw9IndoaXRlIi8+CiAgICAgIDxyZWN0IHg9IjExMCIgeT0iMjIwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjEyMCIgcng9IjQwIiBmaWxsPSJ3aGl0ZSIvPgogICAgICA8dGV4dCB4PSIyMDAiIHk9IjM3MCIgZm9udC1zaXplPSIzNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCI+2YPYp9mG2Lc8L3RleHQ+CiAgICA8L3N2Zz4KICAgIA==" style="
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                display:block;
+                "/></div>
+<div class="philo-info">
+<h3>إيمانويل كانط</h3>
+<div class="courant">الفلسفة النقدية</div>
+</div>
+</div>
+</div>
+</div>
+<div class="philo-card">
+<div class="philo-card-inner">
+<div class="philo-front">
+<div class="philo-avatar"><img src="data:image/svg+xml;base64,CiAgICA8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiPgogICAgICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRUY0NDQ0Ii8+CiAgICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjE0MCIgcj0iNzAiIGZpbGw9IndoaXRlIi8+CiAgICAgIDxyZWN0IHg9IjExMCIgeT0iMjIwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjEyMCIgcng9IjQwIiBmaWxsPSJ3aGl0ZSIvPgogICAgICA8dGV4dCB4PSIyMDAiIHk9IjM3MCIgZm9udC1zaXplPSIzNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCI+2YfZitmI2YU8L3RleHQ+CiAgICA8L3N2Zz4KICAgIA==" style="
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                display:block;
+                "/></div>
+<div class="philo-info">
+<h3>دافيد هيوم</h3>
+<div class="courant">التجريبية</div>
+</div>
+</div>
+</div>
+</div>
+<div class="philo-card">
+<div class="philo-card-inner">
+<div class="philo-front">
+<div class="philo-avatar"><img src="data:image/svg+xml;base64,CiAgICA8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiPgogICAgICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMTExODI3Ii8+CiAgICAgIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjE0MCIgcj0iNzAiIGZpbGw9IndoaXRlIi8+CiAgICAgIDxyZWN0IHg9IjExMCIgeT0iMjIwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjEyMCIgcng9IjQwIiBmaWxsPSJ3aGl0ZSIvPgogICAgICA8dGV4dCB4PSIyMDAiIHk9IjM3MCIgZm9udC1zaXplPSIzNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCI+2LPYp9ix2KrYsTwvdGV4dD4KICAgIDwvc3ZnPgogICAg" style="
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                display:block;
+                "/></div>
+<div class="philo-info">
+<h3>جان بول سارتر</h3>
+<div class="courant">الوجودية / الإنسانية</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ========== PAGE: COURANTS ========== -->
+<div class="page fade-in" id="page-courants">
+<div class="section-title"><div class="tag green">المذاهب الفلسفية</div><div class="line"></div></div>
+<div class="courant-card">
+<div class="courant-header" style="background:linear-gradient(135deg,#1D4ED8,#3B82F6)">
+<div class="icon">🧠</div>
+<div><h3>العقلانية — Rationalisme</h3><p>المعرفة الحقيقية مصدرها العقل وحده</p></div>
+</div>
+<div class="courant-body">
+<div class="courant-item"><label>📖 التعريف</label><p>تيار فلسفي يرى أن العقل هو المصدر الوحيد للمعرفة الحقيقية والمضمونة</p></div>
+<div class="courant-item"><label>🎯 الهدف</label><p>بناء معرفة يقينية مستقلة عن التجربة والحواس</p></div>
+<div class="courant-item"><label>👤 الممثل</label><p><b>ديكارت</b> — أفلاطون — كانط</p></div>
+<div class="courant-item"><label>💡 مثال</label><p>الرياضيات: 2+2=4 لا تحتاج لتجربة — العقل يدركها مباشرة</p></div>
+</div>
+<div style="padding:0 20px 16px">
+<div class="cite">"العيش دون تفلسف كالذي أغمض عينيه ولم يحاول أبدا فتحها"<span class="cite-author">— ديكارت</span></div>
+<div style="margin-top:10px;font-size:13px;padding:10px;background:var(--red-light);border-radius:8px">
+<b>📍 أين نضع العقلانيين في المقال ؟</b><br/>
+<span class="philosopher-tag">أفلاطون</span><span class="philosopher-tag">ديكارت</span><span class="philosopher-tag">كانط</span>
+        → دائماً في جانب: الأفكار الفطرية، اليقين الرياضي، أصل المعرفة من العقل
+      </div>
+</div>
+</div>
+<div class="courant-card">
+<div class="courant-header" style="background:linear-gradient(135deg,#065F46,#22C55E)">
+<div class="icon">🔬</div>
+<div><h3>التجريبية — Empirisme</h3><p>المعرفة مصدرها التجربة والحواس</p></div>
+</div>
+<div class="courant-body">
+<div class="courant-item"><label>📖 التعريف</label><p>تيار يرى أن كل معرفة مصدرها التجربة الحسية، والعقل عند الولادة صفحة بيضاء</p></div>
+<div class="courant-item"><label>🎯 الهدف</label><p>الاعتماد على الملاحظة والتجربة في بناء المعرفة</p></div>
+<div class="courant-item"><label>👤 الممثل</label><p><b>جون لوك</b> — جون ستيورت مل — كلود برنار</p></div>
+<div class="courant-item"><label>💡 مثال</label><p>الطفل يتعلم أن النار حارة من التجربة، لا من التفكير</p></div>
+</div>
+<div style="padding:0 20px 16px">
+<div class="cite">"التجربة هي الأساس الوحيد لجميع معارفنا"<span class="cite-author">— جون لوك</span></div>
+<div style="margin-top:10px;font-size:13px;padding:10px;background:var(--green-light);border-radius:8px">
+<b>📍 أين نضع التجريبيين في المقال ؟</b><br/>
+<span class="philosopher-tag">جون لوك</span><span class="philosopher-tag">كلود برنار</span><span class="philosopher-tag">نيوتن</span>
+        → دائماً في جانب: التجربة، الملاحظة، رفض الأفكار الفطرية
+      </div>
+</div>
+</div>
+<div class="courant-card">
+<div class="courant-header" style="background:linear-gradient(135deg,#92400E,#F97316)">
+<div class="icon">⚡</div>
+<div><h3>البراغماتية — Pragmatisme</h3><p>الحقيقة هي ما ينفع ويفيد</p></div>
+</div>
+<div class="courant-body">
+<div class="courant-item"><label>📖 التعريف</label><p>تيار يرى أن الحقيقة والمعرفة تقاسان بمدى نفعها وفائدتها العملية في الحياة</p></div>
+<div class="courant-item"><label>🎯 الهدف</label><p>جعل الفلسفة نافعة وعملية في الحياة اليومية</p></div>
+<div class="courant-item"><label>👤 الممثل</label><p><b>ويليام جيمس</b> — جون ديوي</p></div>
+<div class="courant-item"><label>💡 مثال</label><p>النظرية الصحيحة هي التي تحل مشكلاتنا الحقيقية</p></div>
+</div>
+<div style="padding:0 20px 16px">
+<div class="cite">"الميتافيزيقا مجرد خرافة لا نفع عملي منها"<span class="cite-author">— ويليام جيمس</span></div>
+</div>
+</div>
+
+<div class="courant-card" style="border-top:6px solid #8B5CF6;margin-top:18px;">
+<div class="courant-header" style="background:#8B5CF6">
+<div class="icon">🧍</div>
+<div>
+<h3>المذهب الإنساني — Humanisme</h3>
+<p>الإنسان هو محور التفكير والقيمة العليا</p>
+</div>
+</div>
+<div class="courant-body">
+<div class="courant-item">
+<label>الفكرة الأساسية</label>
+<p>الإنسان كائن حر وعاقل وقادر على صناعة مصيره بنفسه.</p>
+</div>
+<div class="courant-item">
+<label>أبرز الفلاسفة</label>
+<p>إراسموس — جان بول سارتر — مونتين</p>
+</div>
+<div class="courant-item">
+<label>الشعار</label>
+<p>الإنسان غاية في ذاته وليس وسيلة.</p>
+</div>
+<div class="courant-item">
+<label>اقتباس</label>
+<p>«الإنسان مشروع يصنع نفسه بنفسه» — سارتر</p>
+</div>
+</div>
+</div></div>
+<!-- ========== PAGE: QUIZ ========== -->
+<div class="page fade-in" id="page-quiz">
+<div class="section-title"><div class="tag orange">الاختبار التفاعلي</div><div class="line"></div></div>
+<div class="quiz-container" id="quiz-start">
+<div class="quiz-mode-selector">
+<div class="quiz-mode-btn active" id="mode-general" onclick="selectMode('general')">
+<div class="icon">🧩</div>
+<h3>الاختبار العام</h3>
+<p>فلاسفة + مذاهب + مواقف</p>
+</div>
+<div class="quiz-mode-btn" id="mode-citations" onclick="selectMode('citations')">
+<div class="icon">💬</div>
+<h3>اختبار الاقتباسات</h3>
+<p>"من قال هذه الجملة؟"</p>
+</div>
+</div>
+<div style="text-align:center;margin-top:10px">
+<button class="btn" onclick="startQuiz()" style="padding:14px 40px;font-size:16px">ابدأ الاختبار ←</button>
+</div>
+</div>
+<div class="quiz-container" id="quiz-active" style="display:none">
+<div class="quiz-question-card">
+<div class="quiz-progress">
+<span class="quiz-q-num" id="q-counter">1/10</span>
+<div class="quiz-progress-bar"><div class="quiz-progress-fill" id="q-progress" style="width:10%"></div></div>
+<span id="q-score-display" style="font-size:12px;color:var(--gray);font-weight:700;white-space:nowrap">✅ 0</span>
+</div>
+<div class="quiz-citation-box" id="quiz-citation" style="display:none"></div>
+<div class="quiz-question" id="quiz-question"></div>
+<div class="quiz-options" id="quiz-options"></div>
+<div class="quiz-feedback" id="quiz-feedback"></div>
+<div class="quiz-nav">
+<button class="btn gray" onclick="skipQuestion()">تخطي ←</button>
+<button class="btn" id="next-btn" onclick="nextQuestion()" style="display:none">السؤال التالي ←</button>
+</div>
+</div>
+</div>
+<div class="quiz-container" id="quiz-result" style="display:none">
+<div class="quiz-score-card">
+<div class="score-circle">
+<div class="score-num" id="final-score">0</div>
+<div class="score-den" id="final-total">/10</div>
+</div>
+<h2 id="result-msg" style="font-size:22px;font-weight:800;margin-bottom:8px">نتيجتك</h2>
+<p id="result-sub" style="color:var(--gray);font-size:14px;margin-bottom:24px"></p>
+<div id="result-details" style="text-align:right;margin-bottom:20px"></div>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+<button class="btn" onclick="startQuiz()">إعادة الاختبار</button>
+<button class="btn gray" onclick="backToStart()">تغيير النوع</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ========== PAGE: METHOD ========== -->
+<div class="page fade-in" id="page-method">
+<div class="section-title"><div class="tag purple">المنهجية</div><div class="line"></div></div>
+<div class="method-tabs">
+<button class="method-tab active" onclick="showMethod('intro')">📝 كتابة المقدمة</button>
+<button class="method-tab" onclick="showMethod('conclu')">🏁 كتابة الخاتمة</button>
+<button class="method-tab" onclick="showMethod('jadal')">⚖️ منهج ة</button>
+<button class="method-tab" onclick="showMethod('muq')">🔍 منهج المقارنة</button>
+</div>
+<!-- INTRO -->
+<div class="method-content active" id="method-intro">
+<div class="card" style="margin-bottom:16px">
+<h3 style="font-size:17px;font-weight:800;margin-bottom:16px;color:var(--red)">📝 كيف تكتب مقدمة فلسفية ناجحة ؟</h3>
+<div class="method-steps">
+<div class="method-step">
+<div class="method-step-content">
+<h4>التمهيد (L'accroche)</h4>
+<p>ابدأ بفكرة عامة أو ظاهرة مألوفة تمهد للموضوع</p>
+<div class="example">مثال: "منذ القدم والإنسان يتساءل عن حقيقة المعرفة ومصدرها..."</div>
+</div>
+</div>
+<div class="method-step">
+<div class="method-step-content">
+<h4>عرض الموضوع وتحديد المفاهيم</h4>
+<p>حدد المفاهيم الأساسية في السؤال وبيّن معناها</p>
+<div class="example">مثال: "الرياضيات هي علم الكميات المجردة، والمقصود بأصلها هو مصدرها..."</div>
+</div>
+</div>
+<div class="method-step">
+<div class="method-step-content">
+<h4>طرح الإشكالية</h4>
+<p>صغ السؤال الفلسفي المحوري الذي سيحكم مقالك</p>
+<div class="example">مثال: "هل مصدر الرياضيات هو العقل الخالص أم التجربة الحسية؟"</div>
+</div>
+</div>
+<div class="method-step">
+<div class="method-step-content">
+<h4>الإشارة إلى خطة المقال</h4>
+<p>أعلن عن موقفين أو محورين ستتناولهما</p>
+<div class="example">مثال: "سنتناول موقف العقلانيين أولاً ثم موقف التجريبيين..."</div>
+</div>
+</div>
+</div>
+</div>
+<div class="info-card">
+<div class="info-icon">⚠️</div>
+<div><h4>تجنب هذه الأخطاء</h4><p>لا تبدأ بـ"في هذا الموضوع سأتحدث عن..." — لا تكرر السؤال كما هو — لا تجيب مباشرة في المقدمة</p></div>
+</div>
+</div>
+<!-- CONCLUSION -->
+<div class="method-content" id="method-conclu">
+<div class="card" style="margin-bottom:16px">
+<h3 style="font-size:17px;font-weight:800;margin-bottom:16px;color:var(--red)">🏁 كيف تكتب خاتمة فلسفية ناجحة ؟</h3>
+<div class="method-steps">
+<div class="method-step">
+<div class="method-step-content">
+<h4>استخلاص النتائج</h4>
+<p>لخص بإيجاز المحاور التي تناولتها في صلب المقال</p>
+<div class="example">مثال: "تبيّن لنا أن كلا الموقفين — العقلاني والتجريبي — لهما حجج قوية..."</div>
+</div>
+</div>
+<div class="method-step">
+<div class="method-step-content">
+<h4>الإجابة عن الإشكالية</h4>
+<p>قدّم موقفك الشخصي المدعوم بالحجج التي عرضتها</p>
+<div class="example">مثال: "نستنتج أن الرياضيات لا تنبع من العقل وحده ولا من التجربة وحدها..."</div>
+</div>
+</div>
+<div class="method-step">
+<div class="method-step-content">
+<h4>فتح آفاق جديدة</h4>
+<p>اختم بسؤال جديد يفتح آفاقاً أخرى أو يربط بموضوع مرتبط</p>
+<div class="example">مثال: "وهذا يقودنا إلى التساؤل: هل هناك معرفة يقينية مطلقة أصلاً؟"</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- JADAL METHOD -->
+<div class="method-content" id="method-jadal">
+<div class="card">
+<h3 style="font-size:17px;font-weight:800;margin-bottom:16px;color:var(--blue)">⚖️ منهج ة — خطوة بخطوة</h3>
+<div style="background:var(--blue-light);border-radius:10px;padding:16px;margin-bottom:16px">
+<p style="font-size:13px;color:var(--blue);font-weight:700;margin-bottom:8px">🔑 البنية الأساسية: أطروحة → نقيض → تركيب</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center">
+<div style="background:var(--blue);color:white;border-radius:8px;padding:10px">
+<div style="font-size:20px">①</div>
+<div style="font-size:12px;font-weight:700">الأطروحة</div>
+<div style="font-size:11px;opacity:0.8">الموقف الأول</div>
+</div>
+<div style="background:#EF4444;color:white;border-radius:8px;padding:10px">
+<div style="font-size:20px">②</div>
+<div style="font-size:12px;font-weight:700">نقيض الأطروحة</div>
+<div style="font-size:11px;opacity:0.8">الموقف المضاد</div>
+</div>
+<div style="background:var(--purple);color:white;border-radius:8px;padding:10px">
+<div style="font-size:20px">③</div>
+<div style="font-size:12px;font-weight:700">التركيب</div>
+<div style="font-size:11px;opacity:0.8">الموقف الجامع</div>
+</div>
+</div>
+</div>
+<div class="method-steps">
+<div class="method-step"><div class="method-step-content"><h4>اعرض الأطروحة وحججها</h4><p>قدّم الرأي الأول مع 2-3 حجج ومثال وفيلسوف داعم</p></div></div>
+<div class="method-step"><div class="method-step-content"><h4>انقد الأطروحة</h4><p>بيّن حدود ونقائص هذا الرأي — "غير أن هذا الموقف..."</p></div></div>
+<div class="method-step"><div class="method-step-content"><h4>اعرض نقيض الأطروحة</h4><p>قدّم الرأي المضاد مع حججه ومثاله وفيلسوفه</p></div></div>
+<div class="method-step"><div class="method-step-content"><h4>انقد نقيض الأطروحة</h4><p>بيّن حدوده أيضاً — لا رأي مطلق</p></div></div>
+<div class="method-step"><div class="method-step-content"><h4>التركيب (الحل)</h4><p>قدّم موقفاً جامعاً يتجاوز التناقض ويرتفع بالسؤال</p></div></div>
+</div>
+</div>
+</div>
+<!-- MUQARANA METHOD -->
+<div class="method-content" id="method-muq">
+<div class="card">
+<h3 style="font-size:17px;font-weight:800;margin-bottom:16px;color:var(--green)">🔍 منهج المقارنة — خطوة بخطوة</h3>
+<div style="background:var(--green-light);border-radius:10px;padding:16px;margin-bottom:16px">
+<p style="font-size:13px;color:var(--green);font-weight:700;margin-bottom:8px">🔑 البنية الأساسية: تعريف → اختلاف → تشابه → موقف</p>
+</div>
+<div class="method-steps">
+<div class="method-step"><div class="method-step-content"><h4>عرف المفهومين المقارَنين</h4><p>حدد بدقة طبيعة كل عنصر — لا مقارنة بدون تعريف</p><div class="example">مثال: "المشكلة العلمية هي... أما الإشكالية الفلسفية فهي..."</div></div></div>
+<div class="method-step"><div class="method-step-content"><h4>اعرض أوجه الاختلاف</h4><p>حدد الفوارق الأساسية بشكل منظم (مصدر، أداة، هدف...)</p></div></div>
+<div class="method-step"><div class="method-step-content"><h4>اعرض أوجه التشابه</h4><p>ابحث عما يجمعهما — لا يوجد اختلاف مطلق</p></div></div>
+<div class="method-step"><div class="method-step-content"><h4>تحديد العلاقة والموقف</h4><p>هل هما متكاملان؟ أيهما أهم؟ ما طبيعة العلاقة بينهما؟</p></div></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+// ===== NAVIGATION =====
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  const btns = document.querySelectorAll('.nav-btn');
+  const pages = ['accueil','lessons','philos','courants','quiz','method'];
+  btns[pages.indexOf(id)].classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ===== ACCORDION =====
+function toggleAcc(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  // close all
+  document.querySelectorAll('.accordion-body.open').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.accordion-header.open').forEach(h => h.classList.remove('open'));
+  if (!isOpen) { body.classList.add('open'); header.classList.add('open'); }
+}
+
+// ===== METHOD TABS =====
+function showMethod(id) {
+  document.querySelectorAll('.method-content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.method-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('method-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ===== PHILOSOPHERS =====
+const philosophers = [
+  {
+    name: 'أفلاطون', emoji: '🏛️', courant: 'عقلاني', color: '#3B82F6',
+    idea: 'المعرفة الحقيقية تسكن في العقل وليس في الحواس — نظرية التذكر',
+    vision: 'عالم المُثُل: الحقيقة ليست في الأشياء بل في صورها المجردة',
+    citation: '"الإنسان يتذكر المعرفة بواسطة الذهن وحده دون أي واسطة أخرى"',
+    camp: 'العقلانيون — أصل الرياضيات + أهمية الفلسفة'
+  },
+  {
+    name: 'ديكارت', emoji: '🔭', courant: 'عقلاني', color: '#1D4ED8',
+    idea: 'أنا أفكر إذن أنا موجود — الشك المنهجي طريق اليقين',
+    vision: 'العقل هو الميزان الوحيد — الأفكار الفطرية أصل المعرفة',
+    citation: '"العيش دون تفلسف كالذي أغمض عينيه ولم يحاول أبدا فتحها"',
+    camp: 'العقلانيون — الفلسفة ضرورية، الأفكار الفطرية، اليقين الرياضي'
+  },
+  {
+    name: 'أرسطو', emoji: '📜', courant: 'تجريبي/منطقي', color: '#059669',
+    idea: 'المعرفة تبدأ من الحواس والتجربة — لا أفكار فطرية',
+    vision: 'الواقع المحسوس هو نقطة البداية — المنطق أداة التفكير',
+    citation: '"الدهشة هي التي تدفع الناس نحو التفلسف"',
+    camp: 'أهمية الفلسفة — مصدر المعرفة من الحواس'
+  },
+  {
+    name: 'كانط', emoji: '⏰', courant: 'نقدي / تركيبي', color: '#7C3AED',
+    idea: 'المعرفة تجمع بين العقل والتجربة — قبلي وبعدي',
+    vision: 'تركيب: لا عقل بدون تجربة ولا تجربة بدون عقل',
+    citation: '"المعرفة الرياضية الكلية هي زيادة العقل على الواقع"',
+    camp: 'التركيب والنقد — يقف في المنتصف بين العقلانيين والتجريبيين'
+  },
+  {
+    name: 'جون لوك', emoji: '📄', courant: 'تجريبي', color: '#D97706',
+    idea: 'العقل عند الولادة صفحة بيضاء — التجربة تملؤها',
+    vision: 'لا أفكار فطرية — كل معرفة مصدرها الحواس',
+    citation: '"التجربة هي الأساس الوحيد لجميع معارفنا"',
+    camp: 'التجريبيون — مصدر الرياضيات من التجربة'
+  },
+  {
+    name: 'كلود برنار', emoji: '🧪', courant: 'تجريبي/منهجي', color: '#DC2626',
+    idea: 'الفرضية ضرورة منهجية — التجريب بدونها عشوائي',
+    vision: 'الطريقة العلمية: ملاحظة → فرضية → تجربة → قانون',
+    citation: '"التجريب بدون فرضية يؤدي إلى المخاطرة"',
+    camp: 'الفرضية ضرورية — المنهج التجريبي — أهمية الفلسفة للعلم'
+  },
+  {
+    name: 'كارل بوبر', emoji: '❌', courant: 'نقدي', color: '#E8534A',
+    idea: 'مبدأ التفنيد: النظرية علمية فقط إذا أمكن دحضها',
+    vision: 'الاستقراء هش — العلم يتقدم بالتفنيد لا بالتأكيد',
+    citation: '"إن بنيان الاستقراء هش يسقط بحاله واحدة"',
+    camp: 'ضد الاستقراء — نقد الاستقراء الكلاسيكي'
+  },
+  {
+    name: 'فرنسيس بيكون', emoji: '🔑', courant: 'تجريبي', color: '#065F46',
+    idea: 'المعرفة قوة — الاستقراء طريق العلم الصحيح',
+    vision: 'التجديد العلمي: ارفض الأوهام وابنِ العلم على الملاحظة',
+    citation: '"الاستقراء هو استخلاص القواعد الكلية من الأحكام الجزئية"',
+    camp: 'الاستقراء مبرر — التجريبية — الملاحظة أصل العلم'
+  },
+  {
+    name: 'هيغل', emoji: '🌀', courant: 'جدلي/مثالي', color: '#6D28D9',
+    idea: 'ة: أطروحة + نقيضها = تركيب — العقل والواقع متطابقان',
+    vision: 'التاريخ يتطور جدلياً — الروح المطلقة تتجلى في الواقع',
+    citation: '"كل ما هو عقلي فهو واقعي وما هو واقعي فهو عقلي"',
+    camp: 'التركيب — أصل الرياضيات — يجمع بين العقل والواقع'
+  },
+  {
+    name: 'نيوتن', emoji: '🍎', courant: 'تجريبي/علمي', color: '#0369A1',
+    idea: 'العلم يُبرهن ولا يفترض — القوانين مستخرجة من الملاحظة',
+    vision: 'قانون الجاذبية مثال عن بناء العلم على الملاحظة والبرهان',
+    citation: '"أنا أبرهن ولا أفترض"',
+    camp: 'ضد الفرضية — الملاحظة المباشرة أساس العلم'
+  },
+  {
+    name: 'ابن خلدون', emoji: '📚', courant: 'تاريخي/اجتماعي', color: '#92400E',
+    idea: 'التاريخ علم — العمران البشري له قوانين يمكن اكتشافها',
+    vision: 'الأمم تمر بأطوار كالكائنات الحية — التاريخ يُفهم بالعقل',
+    citation: '"إن التاريخ هو عمران الاجتماع الإنساني"',
+    camp: 'الاستقراء مبرر — التاريخ علم له قوانين'
+  },
+  {
+    name: 'فرويد', emoji: '🧬', courant: 'تحليل نفسي', color: '#BE185D',
+    idea: 'اللاوعي يحكم السلوك — الكبت أصل الاضطرابات النفسية',
+    vision: 'النفس: الأنا / الهو / الأنا الأعلى — التحليل طريق الشفاء',
+    citation: '"يكشف المرء الحقيقة الكاملة من خط لآخر"',
+    camp: 'التحليل النفسي — ضد السلوكية — اللاوعي أساس الشخصية'
+  },
+  {
+    name: 'واطسن', emoji: '🔬', courant: 'سلوكي', color: '#0F766E',
+    idea: 'علم النفس يدرس السلوك الظاهر فقط — ما لا يُلاحَظ لا يُعلَم',
+    vision: 'النفس = استجابات مرئية — الملاحظة والتجربة هما الطريق',
+    citation: '"إن علم النفس فرع موضوعي تجريبي محض من فروع العلوم الأخرى"',
+    camp: 'السلوكية — ضد التحليل النفسي — الملاحظة فقط'
+  },
+  {
+    name: 'برتراند راسل', emoji: '🔎', courant: 'تحليلي', color: '#1E40AF',
+    idea: 'الفلسفة تحلل اللغة والمفاهيم — قيمتها في التساؤل لا في الحلول',
+    vision: 'الفلسفة مفيدة حتى لو لم تصل إلى يقين — الشك فضيلة',
+    citation: '"إن قيمة الفلسفة يجب أن تلتمس من عين عدم يقينها بالذات"',
+    camp: 'الفلسفة ضرورية — التحليل المنطقي'
+  },
+  {
+    name: 'بوانكاريه', emoji: '📐', courant: 'اتفاقي/وضعي', color: '#4338CA',
+    idea: 'الرياضيات اتفاقات — الهندسة اللاأقليدية ممكنة ومتسقة',
+    vision: 'العلم ينمو بفرضيات خلاقة — الملاحظة وحدها لا تكفي',
+    citation: '"إن العلم حتمي وذلك بالبداهة"',
+    camp: 'الاستقراء مبرر — الفرضية ضرورية — الرياضيات اتفاقية'
+  },
+  {
+    name: 'برغسون', emoji: '⏳', courant: 'روحاني/حيوي', color: '#7C2D12',
+    idea: 'الحياة لا تُختزل في العقل — الحدس أداة الفهم الحقيقي',
+    vision: 'الزمن الحقيقي هو الديمومة — العقل يجمد الحياة',
+    citation: '"الرياضيات عبارة عن نتائج وليست أسساً"',
+    camp: 'التركيب — نقد العقلانية المطلقة'
+  }
+];
+
+function buildPhiloGrid() {
+  const grid = document.getElementById('philo-grid');
+  grid.innerHTML = philosophers.map((p, i) => `
+    <div class="philo-card" id="philo-${i}" onclick="flipPhilo(${i})">
+      <div class="philo-card-inner">
+        <div class="philo-front">
+          <div class="philo-avatar" style="background:${p.color}20">
+            <div class="hidden-label">
+              <span style="font-size:36px">🎭</span>
+              <span>من أنا؟</span>
+              <span style="font-size:10px;opacity:0.7">اضغط لاكتشافي</span>
+            </div>
+          </div>
+          <div class="philo-info">
+            <div class="courant" style="color:${p.color};font-weight:700;font-size:12px">● ${p.courant}</div>
+            <p style="font-size:11px;color:var(--gray);margin-top:4px">${p.citation.substring(1,40)}...</p>
+          </div>
+        </div>
+        <div class="philo-back">
+          <div class="philo-back-content" style="min-height:280px">
+            <span class="emoji">${p.emoji}</span>
+            <h3>${p.name}</h3>
+            <p>💡 <b>الفكرة:</b> ${p.idea}</p>
+            <div class="citation">${p.citation}</div>
+            <div class="philo-camp">📍 ${p.camp}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function flipPhilo(i) {
+  document.getElementById('philo-' + i).classList.toggle('flipped');
+}
+
+buildPhiloGrid();
+
+// ===== QUIZ =====
+const generalQuestions = [
+  { q: "من قال أن الفلسفة ضرورية مثل «الذي أغمض عينيه»؟", opts: ["أرسطو","ديكارت","أفلاطون","كانط"], ans: 1 },
+  { q: "ما هو مصدر المعرفة حسب التجريبيين؟", opts: ["العقل وحده","الفطرة الإلهية","التجربة والحواس","الحدس"], ans: 2 },
+  { q: "من يرى أن «الدهشة هي التي تدفع الناس نحو التفلسف»؟", opts: ["ديكارت","كانط","أرسطو","فرويد"], ans: 2 },
+  { q: "ما موقف كارل بوبر من الاستقراء؟", opts: ["يدعمه ويقبله","يرفضه ويعتبره هشاً","يعتبره ضرورياً","لا يتحدث عنه"], ans: 1 },
+  { q: "ما المذهب الذي يرى أن «العقل عند الولادة صفحة بيضاء»؟", opts: ["العقلانية","البراغماتية","التجريبية","ة"], ans: 2 },
+  { q: "من يمثل التجريبية في سؤال أصل الرياضيات؟", opts: ["أفلاطون","ديكارت","جون لوك","هيغل"], ans: 2 },
+  { q: "ما هو مبدأ هيغل الشهير؟", opts: ["أنا أبرهن ولا أفترض","العقل والواقع متطابقان","التجربة أصل المعرفة","الشك طريق اليقين"], ans: 1 },
+  { q: "من يدرس السلوك الظاهر فقط في علم النفس؟", opts: ["فرويد","واطسن","ابن خلدون","برغسون"], ans: 1 },
+  { q: "ما الفرق الجوهري بين المشكلة العلمية والإشكالية الفلسفية؟", opts: ["لا فرق بينهما","العلمية لها حل محدد والفلسفية تأملية","الفلسفية أسهل","العلمية غير مفيدة"], ans: 1 },
+  { q: "ما موقف فرنسيس بيكون من الاستقراء؟", opts: ["يرفضه كلياً","يعتبره هشاً","يدافع عنه ويعتبره طريق العلم","يتجاهله"], ans: 2 },
+  { q: "من يعتبر أن الفرضية ضرورية في المنهج التجريبي؟", opts: ["نيوتن","ماجندي","كلود برنار","بوبر"], ans: 2 },
+  { q: "ما البنية الأساسية للموضوع ؟", opts: ["مقدمة + صلب + خاتمة","أطروحة + نقيضها + تركيب","تعريف + اختلاف + تشابه","سؤال + إجابة + مثال"], ans: 1 }
+];
+
+const citationQuestions = [
+  { citation: '"أنا أبرهن ولا أفترض"', opts: ["كلود برنار","بوانكاريه","نيوتن","ماجندي"], ans: 2, theme: "الفرضية" },
+  { citation: '"التجريب بدون فرضية يؤدي إلى المخاطرة"', opts: ["نيوتن","كلود برنار","ديكارت","هيوم"], ans: 1, theme: "الفرضية" },
+  { citation: '"التجربة هي الأساس الوحيد لجميع معارفنا"', opts: ["ديكارت","أفلاطون","جون لوك","كانط"], ans: 2, theme: "أصل المعرفة" },
+  { citation: '"كل ما هو عقلي فهو واقعي وما هو واقعي فهو عقلي"', opts: ["أفلاطون","ديكارت","كانط","هيغل"], ans: 3, theme: "التركيب" },
+  { citation: '"الدهشة هي التي تدفع الناس نحو التفلسف"', opts: ["ديكارت","أرسطو","أفلاطون","برتراند راسل"], ans: 1, theme: "الفلسفة" },
+  { citation: '"إن بنيان الاستقراء هش يسقط بحاله واحدة"', opts: ["هيوم","بيكون","بوانكاريه","كارل بوبر"], ans: 3, theme: "الاستقراء" },
+  { citation: '"العيش دون تفلسف كالذي أغمض عينيه ولم يحاول أبدا فتحها"', opts: ["أرسطو","أفلاطون","ديكارت","برغسون"], ans: 2, theme: "أهمية الفلسفة" },
+  { citation: '"إن قيمة الفلسفة يجب أن تلتمس من عين عدم يقينها بالذات"', opts: ["أرسطو","برتراند راسل","كانط","ديكارت"], ans: 1, theme: "قيمة الفلسفة" },
+  { citation: '"الاستقراء هو استخلاص القواعد الكلية من الأحكام الجزئية"', opts: ["بوبر","هيوم","بيكون","ديكارت"], ans: 2, theme: "الاستقراء" },
+  { citation: '"المعاني الرياضية أفكار فطرية أودعها الله فينا بالفطرة"', opts: ["جون لوك","كانط","أفلاطون","ديكارت"], ans: 3, theme: "أصل الرياضيات" }
+];
+
+let currentMode = 'general';
+let currentQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let answered = false;
+let userAnswers = [];
+
+function selectMode(mode) {
+  currentMode = mode;
+  document.querySelectorAll('.quiz-mode-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('mode-' + mode).classList.add('active');
+}
+
+function startQuiz() {
+  currentQuestions = currentMode === 'general'
+    ? shuffle([...generalQuestions]).slice(0, 10)
+    : shuffle([...citationQuestions]).slice(0, 10);
+  currentIndex = 0; score = 0; answered = false; userAnswers = [];
+  document.getElementById('quiz-start').style.display = 'none';
+  document.getElementById('quiz-active').style.display = 'block';
+  document.getElementById('quiz-result').style.display = 'none';
+  showQuestion();
+}
+
+function showQuestion() {
+  const q = currentQuestions[currentIndex];
+  const total = currentQuestions.length;
+  document.getElementById('q-counter').textContent = `${currentIndex+1}/${total}`;
+  document.getElementById('q-progress').style.width = `${((currentIndex+1)/total)*100}%`;
+  document.getElementById('q-score-display').textContent = `✅ ${score}`;
+  document.getElementById('quiz-feedback').className = 'quiz-feedback';
+  document.getElementById('next-btn').style.display = 'none';
+  answered = false;
+
+  if (currentMode === 'citations' && q.citation) {
+    document.getElementById('quiz-citation').style.display = 'block';
+    document.getElementById('quiz-citation').innerHTML = `💬 ${q.citation}<br><small style="color:var(--gray);font-size:11px">الموضوع: ${q.theme}</small>`;
+    document.getElementById('quiz-question').textContent = '👆 من قال هذه الجملة ؟';
+  } else {
+    document.getElementById('quiz-citation').style.display = 'none';
+    document.getElementById('quiz-question').textContent = q.q;
+  }
+
+  const letters = ['أ', 'ب', 'ج', 'د'];
+  document.getElementById('quiz-options').innerHTML = q.opts.map((opt, i) => `
+    <button class="quiz-option" onclick="selectAnswer(${i})">
+      <span class="opt-letter">${letters[i]}</span>
+      ${opt}
+    </button>
+  `).join('');
+}
+
+function selectAnswer(i) {
+  if (answered) return;
+  answered = true;
+  const q = currentQuestions[currentIndex];
+  const opts = document.querySelectorAll('.quiz-option');
+  opts.forEach(o => o.disabled = true);
+  opts[q.ans].classList.add('correct');
+  const fb = document.getElementById('quiz-feedback');
+
+  if (i === q.ans) {
+    score++;
+    opts[i].classList.add('correct');
+    fb.className = 'quiz-feedback show correct-fb';
+    fb.innerHTML = '✅ إجابة صحيحة! أحسنت';
+  } else {
+    opts[i].classList.add('wrong');
+    fb.className = 'quiz-feedback show wrong-fb';
+    fb.innerHTML = `❌ الإجابة الصحيحة هي: <b>${q.opts[q.ans]}</b>`;
+  }
+  userAnswers.push({ correct: i === q.ans, question: q.q || q.citation, correctAns: q.opts[q.ans] });
+  document.getElementById('next-btn').style.display = 'inline-block';
+}
+
+function nextQuestion() {
+  currentIndex++;
+  if (currentIndex >= currentQuestions.length) showResult();
+  else showQuestion();
+}
+
+function skipQuestion() {
+  userAnswers.push({ correct: false, skipped: true });
+  currentIndex++;
+  if (currentIndex >= currentQuestions.length) showResult();
+  else showQuestion();
+}
+
+function showResult() {
+  document.getElementById('quiz-active').style.display = 'none';
+  document.getElementById('quiz-result').style.display = 'block';
+  const total = currentQuestions.length;
+  const pct = Math.round((score/total)*100);
+  document.getElementById('final-score').textContent = score;
+  document.getElementById('final-total').textContent = `/${total}`;
+
+  let msg, sub;
+  if (pct >= 80) { msg = '🏆 ممتاز! أنت مستعد للبكالوريا'; sub = 'نتيجة رائعة — واصل المراجعة'; }
+  else if (pct >= 60) { msg = '👍 جيد! راجع ما أخطأت فيه'; sub = 'قريب من الهدف — بقليل من المراجعة ستتحسن'; }
+  else { msg = '📚 راجع الدروس مرة أخرى'; sub = 'لا تستسلم — المراجعة هي المفتاح'; }
+
+  document.getElementById('result-msg').textContent = msg;
+  document.getElementById('result-sub').textContent = sub;
+
+  const wrong = userAnswers.filter(a => !a.correct && !a.skipped);
+  document.getElementById('result-details').innerHTML = wrong.length
+    ? `<p style="font-size:13px;font-weight:700;margin-bottom:8px;color:var(--red)">❌ ما أخطأت فيه:</p>` +
+      wrong.map(a => `<div style="background:var(--gray-light);border-radius:8px;padding:10px;margin-bottom:6px;font-size:12px"><b>الإجابة الصحيحة:</b> ${a.correctAns}</div>`).join('')
+    : '<div style="color:var(--green);font-weight:700;font-size:14px">🎉 لم تخطئ في أي سؤال!</div>';
+}
+
+function backToStart() {
+  document.getElementById('quiz-start').style.display = 'block';
+  document.getElementById('quiz-active').style.display = 'none';
+  document.getElementById('quiz-result').style.display = 'none';
+}
+
+function shuffle(arr) {
+  for (let i = arr.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i+1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+</script>
+</body>
+</html>
