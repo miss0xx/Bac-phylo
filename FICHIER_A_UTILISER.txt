@@ -1,0 +1,86 @@
+═══════════════════════════════════════════════════════════════════════════════
+
+                    📚 PHILOSOPHIE - FICHIER À UTILISER 📚
+
+═══════════════════════════════════════════════════════════════════════════════
+
+👉 VOICI LE FICHIER À OUVRIR:
+
+    ➤➤➤  preview_updated.html  ⬅⬅⬅
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ CE QUI A ÉTÉ FAIT:
+
+1. ✅ STRUCTURE ORIGINALE CONSERVÉE
+   - Même layout
+   - Mêmes couleurs
+   - Même navigation
+   - Même design
+
+2. ✅ SECTION MADHAB SUPPRIMÉE
+   - "Dialectique" complètement enlevée
+   - 4 courants restent: Rationalisme, Empirisme, Pragmatisme, Humanisme
+
+3. ✅ 5 ARTICLES COMPLETS AJOUTÉS
+   - Article 1: Maqaddarat al-Ma'rifa (Sources de la Connaissance)
+   - Article 2: Al-Haqiqa (Vérité Absolue/Relative)
+   - Article 3: Al-Riyyadiyyat (Mathématiques)
+   - Article 4: Dawr al-Furuda (Hypothèse Scientifique)
+   - Article 5: Al-Hatmiyya fi-l-Biulujiya (Déterminisme en Biologie)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 COMMENT OUVRIR LE FICHIER:
+
+  1. Double-cliquez sur "preview_updated.html"
+  
+  OU
+  
+  2. Faites glisser vers votre navigateur
+  
+  OU
+  
+  3. Clic droit → Ouvrir avec → Navigateur
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ VÉRIFIER QUE TOUT MARCHE:
+
+  ✓ Page "الدروس" (Leçons)
+    → Scrollez vers le bas
+    → Vous voyez "المقالات الفلسفية الكاملة"
+    → 5 accordéons avec articles
+
+  ✓ Page "المذاهب الفلسفية" (Courants Philosophiques)
+    → 4 cartes seulement (pas de Dialectique)
+    → Rationalisme, Empirisme, Pragmatisme, Humanisme
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 FICHIERS FOURNIS:
+
+  1. preview_updated.html          ← ⭐ FICHIER PRINCIPAL À OUVRIR
+  2. RESUME_MODIFICATIONS.md        (Explications détaillées)
+  3. FICHIER_A_UTILISER.txt        (Ce fichier)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💡 POINTS CLÉS:
+
+  • Aucun changement de structure
+  • Aucun changement de couleurs
+  • Aucun changement de navigation
+  • Aucun changement de design
+  
+  SEULEMENT:
+  ✓ Suppression: Dialectique
+  ✓ Ajout: 5 Articles complets du PDF
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ TOUT EST PRÊT À ÊTRE UTILISÉ!
+
+Ouvrez simplement: preview_updated.html
+
+═══════════════════════════════════════════════════════════════════════════════
